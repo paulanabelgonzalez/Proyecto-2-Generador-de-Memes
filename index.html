@@ -21,6 +21,100 @@
         <!-- fin del nav -->
     </header>
     <!-- fin del header -->
+
+    <!-- comienzo del main -->
+    <main>
+        <!-- comienzo de la sección pantalla principal -->
+        <div class="contenedor_principal">
+            <div class="meme">
+                <p class="meme_tex__superior"></p>
+                <div class="meme_img"></div>
+                <p class="meme_tex__inferior"></p>
+            </div>
+            <button class="btn_descargar">
+                <span class="img-descargar"></span>
+                <span class="tex-descargar">Descargar Meme</span>
+            </button>
+        </div>
+        <!-- fin de la sección pantalla principal -->
+
+        <!-- comienzo de la solapa imagen -->
+        <aside class="contenedor">
+            <div class="contenedor_imagen">
+                <form action="" class="contenedor_filtros imagen">
+                    <buttton class="btn_cerrar">x</buttton>
+                    <h2 class="imagen_titulo">IMAGEN</h2>
+
+                    <div class="imagen_archivo">
+                        <label for="archivo" class="archivo">SUBIR IMAGEN</label>
+                        <input type="file" name="archivo" accept="png, .jpg, svg">
+                    </div>
+
+                    <div class="imagen_fondo">
+                        <h3 class="fondo_titulo"></h3>
+
+                        <div class="fondo_contenedor">
+                            <input type="color" name="fondo" value="">
+                            <span class="color">#FFFFFF</span>
+                        </div>
+                        <select name="select" class="fondo_menu">
+                            <option value="fondo value1" selected>Ninguno</option>
+                            <option value="fondo value2">Aclarar</option>
+                            <option value="fondo value3">Oscurecer</option>
+                            <option value="fondo value4">Diferencia</option>
+                            <option value="fondo value5">Luminosidad</option>
+                            <option value="fondo value6">Multiplicar</option>
+                        </select>
+                    </div>
+
+                    <div class="imagen_filtros">
+                        <h3 class="filtros_titulo">FILTROS</h3>
+
+                        <div class="filtro_brillo">
+                            <label for="brillo">BRILLO</label>
+                            <input type="range" name="brillo" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div class="filtro_opacidad">
+                            <label for="opacidad">OPACIDAD</label>
+                            <input type="range" name="opacidad" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div class="filtro_contraste">
+                            <label for="contraste">CONTRASTE</label>
+                            <input type="range" name="contraste" min="100%" max="1000%" step="1%" value="100%">
+                        </div>
+                        <div class="filtro_desenfoque">
+                            <label for="desenfoque">DESENFOQUE</label>
+                            <input type="range" name="desenfoque" min="0px" max="10px" step="0.1px" value="0px">
+                        </div>
+                        <div class="filtro_grises">
+                            <label for="grises">ESCALA DE GRISES</label>
+                            <input type="range" name="grises" min="0%" max="100%" step="1%" value="0%">
+                        </div>
+                        <div class="filtro_sepia">
+                            <label for="sepia">SEPIA</label>
+                            <input type="range" name="sepia" min="0%" max="100%" step="1%" value="0%">
+                        </div>
+                        <div class="filtro_tono">
+                            <label for="tono">ROTACION DE TONO</label>
+                            <input type="range" name="tono" min="0deg" max="359deg" step="1deg" value="0deg">
+                        </div>
+                        <div class="filtro_saturado">
+                            <label for="saturado">SATURADO</label>
+                            <input type="range" name="saturado" min="100%" max="1000%" step="10%" value="100%">
+                        </div>
+                        <div class="filtro_negativo">
+                            <label for="negativo">NEGATIVO</label>
+                            <input type="range" name="negativo" min="0" max="1" step="0.1" value="1">
+                        </div>
+                    </div>
+
+                    <input type="reset" value="Reestablecer Filtros">
+                </form>
+            </div>
+
+        </aside>
+
+    </main>
 </body>
 <script src="main.js"></script>
 
