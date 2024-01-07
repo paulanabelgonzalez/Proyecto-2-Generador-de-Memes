@@ -149,8 +149,9 @@
                     <div class="contenedor_fuente_panel">
                         <input type="number" name="fuente_tamaño" value="10">
                         <div class="fuente_btns">
-                            <button class="btn_alineacion_izq"></button><button
-                                class="btn_alineacion_centro"></button><button class="btn_alineacion_der"></button>
+                            <button class="btn_alineacion_izq"></button>
+                            <button class="btn_alineacion_centro"></button>
+                            <button class="btn_alineacion_der"></button>
                         </div>
                     </div>
                 </div>
@@ -167,12 +168,39 @@
                         <span class="fondo">#FFFFFF</span>
                     </div>
                     <input type="checkbox" name="check_transparente">
-                    <label for="check_transparente"> Fondo transparente</label>
+                    <label for="check_transparente">Fondo transparente</label>
+                </div>
+
+                <div class="texto_contorno">
+                    <h3 class="contorno_titulo">CONTORNO</h3>
+                    <div class="contorno_btns">
+                        <button class="btn_contorno_ninguno">Ninguno</button>
+                        <button class="btn_contorno_claro">Claro</button>
+                        <button class="btn_contorno_oscuro">Oscuro</button>
+                    </div>
+                </div>
+
+                <div class="texto_espaciado">
+                    <label for="espaciado">ESPACIADO</label>
+                    <input type="number" name="espaciado">
+                </div>
+
+                <div class="texto_interlineado">
+                    <h3 class="interlineado_titulo">INTERLINEADO</h3>
+                    <select name="interlineado_menu">
+                        <option value="valor1">0.8</option>
+                        <option value="valor2">1</option>
+                        <option value="valor3">1.2</option>
+                        <option value="valor4">1.5</option>
+                        <option value="valor5">2</option>
+                        <option value="valor6">2.5</option>
                 </div>
             </div>
+            <!-- fin de la solapa texto -->
         </aside>
-
+        <!-- fin del aside -->
     </main>
+    <!-- fin del main -->
 </body>
 <script src="main.js"></script>
 
