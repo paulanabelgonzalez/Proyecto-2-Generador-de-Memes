@@ -38,8 +38,9 @@
         </div>
         <!-- fin de la sección pantalla principal -->
 
-        <!-- comienzo de la solapa imagen -->
+        <!-- comienzo del aside -->
         <aside class="contenedor">
+            <!-- comienzo de la solapa imagen -->
             <div class="contenedor_imagen">
                 <form action="" class="contenedor_filtros imagen">
                     <buttton class="btn_cerrar">x</buttton>
@@ -57,13 +58,13 @@
                             <input type="color" name="fondo" value="">
                             <span class="color">#FFFFFF</span>
                         </div>
-                        <select name="select" class="fondo_menu">
-                            <option value="fondo value1" selected>Ninguno</option>
-                            <option value="fondo value2">Aclarar</option>
-                            <option value="fondo value3">Oscurecer</option>
-                            <option value="fondo value4">Diferencia</option>
-                            <option value="fondo value5">Luminosidad</option>
-                            <option value="fondo value6">Multiplicar</option>
+                        <select name="fondo_menu">
+                            <option value="ninguno" selected>Ninguno</option>
+                            <option value="aclarar">Aclarar</option>
+                            <option value="oscurecer">Oscurecer</option>
+                            <option value="diferencia">Diferencia</option>
+                            <option value="luminosidad">Luminosidad</option>
+                            <option value="multiplicar">Multiplicar</option>
                         </select>
                     </div>
 
@@ -111,7 +112,64 @@
                     <input type="reset" value="Reestablecer Filtros">
                 </form>
             </div>
+            <!-- fin de la solapa imagen -->
 
+            <!-- comienzo de la solapa texto -->
+            <div class="contenedor_texto">
+                <buttton class="btn_cerrar">x</buttton>
+                <h2 class="texto_titulo">TEXTO</h2>
+
+                <div class="texto_superior">
+                    <label for="superior">SUPERIOR</label>
+                    <textarea name="superior" id="superior" cols="30" rows="10">TEXTO SUPERIOR</textarea>
+                    <input type="checkbox" name="check_superior">
+                    <label for="check_superior">Sin texto superior</label>
+                </div>
+
+                <div class="texto_inferior">
+                    <label for="inferior">INFERIOR</label>
+                    <textarea name="inferior" id="inferior" cols="30" rows="10">TEXTO INFERIOR</textarea>
+                    <input type="checkbox" name="check_inferior">
+                    <label for="check_inferior">Sin texto inferior</label>
+                </div>
+
+                <div class="texto_fuente">
+                    <h3 class="fuente_titulo">FUENTE</h3>
+                    <select name="fuente_menu">
+                        <option value="arial" selected>Arial</option>
+                        <option value="arial_black">Arial Black</option>
+                        <option value="american_typewriter">American Typewriter</option>
+                        <option value="andale_mono">Andale Mono</option>
+                        <option value="comic_sans_ms">Comic Sans MS</option>
+                        <option value="helvetica">Helvetica</option>
+                        <option value="impact">Impact</option>
+                        <option value="verdana">Verdana</option>
+                        <option value="times_new_roman">Times New Roman</option>
+                    </select>
+                    <div class="contenedor_fuente_panel">
+                        <input type="number" name="fuente_tamaño" value="10">
+                        <div class="fuente_btns">
+                            <button class="btn_alineacion_izq"></button><button
+                                class="btn_alineacion_centro"></button><button class="btn_alineacion_der"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="texto_panel">
+                    <div class="panel_color">
+                        <label for="color">COLOR</label>
+                        <input type="color" name="color">
+                        <span class="color">#000000</span>
+                    </div>
+                    <div class="panel_fondo">
+                        <label for="fondo">FONDO</label>
+                        <input type="color" name="fondo">
+                        <span class="fondo">#FFFFFF</span>
+                    </div>
+                    <input type="checkbox" name="check_transparente">
+                    <label for="check_transparente"> Fondo transparente</label>
+                </div>
+            </div>
         </aside>
 
     </main>
