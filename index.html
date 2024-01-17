@@ -14,9 +14,9 @@
         <h1>Generador de Memes</h1>
         <!-- comienzo del nav -->
         <nav class="nav_btns">
-            <button class="btn_imagen">Imagen</button>
-            <button class="btn_texto">Texto</button>
-            <button class="btn_modo">Modo Claro</button>
+            <button class="btn_imagen" id="btn_imagen">Imagen</button>
+            <button class="btn_texto" id="btn_texto">Texto</button>
+            <button class="btn_modo" id="btn_modo">Modo Claro</button>
         </nav>
         <!-- fin del nav -->
     </header>
@@ -27,9 +27,9 @@
         <!-- comienzo de la sección pantalla principal -->
         <div class="contenedor_principal">
             <div class="meme">
-                <p class="meme_tex__superior"></p>
+                <p class="meme_tex__superior">Texto Superior</p>
                 <div class="meme_img"></div>
-                <p class="meme_tex__inferior"></p>
+                <p class="meme_tex__inferior">Texto Inferior</p>
             </div>
             <button class="btn_descargar">
                 <span class="img-descargar"></span>
@@ -39,23 +39,23 @@
         <!-- fin de la sección pantalla principal -->
 
         <!-- comienzo del aside -->
-        <aside class="contenedor">
+        <aside class="contenedor" id="contenedor">
             <!-- comienzo de la solapa imagen -->
-            <div class="contenedor_imagen">
+            <div class="contenedor_imagen" id="contenedor_imagen">
                 <form action="" class="contenedor_filtros imagen">
-                    <buttton class="btn_cerrar">x</buttton>
+                    <button class="btn_cerrar__imagen" id="btn_cerrar__imagen" type="button">x</button>
                     <h2 class="imagen_titulo">IMAGEN</h2>
 
                     <div class="imagen_archivo">
                         <label for="archivo" class="archivo">SUBIR IMAGEN</label>
-                        <input type="file" name="archivo" accept="png, .jpg, svg">
+                        <input type="file" name="archivo" id="archivo" accept="png, .jpg, svg">
                     </div>
 
                     <div class="imagen_fondo">
                         <h3 class="fondo_titulo"></h3>
 
                         <div class="fondo_contenedor">
-                            <input type="color" name="fondo" value="">
+                            <input type="color" name="fondo" value="#FFFFFF">
                             <span class="color">#FFFFFF</span>
                         </div>
                         <select name="fondo_menu">
@@ -73,39 +73,42 @@
 
                         <div class="filtro_brillo">
                             <label for="brillo">BRILLO</label>
-                            <input type="range" name="brillo" min="0" max="1" step="0.1" value="1">
+                            <input type="range" name="brillo" id="brillo" min="0" max="1" step="0.1" value="1">
                         </div>
                         <div class="filtro_opacidad">
                             <label for="opacidad">OPACIDAD</label>
-                            <input type="range" name="opacidad" min="0" max="1" step="0.1" value="1">
+                            <input type="range" name="opacidad" id="opacidad" min="0" max="1" step="0.1" value="1">
                         </div>
                         <div class="filtro_contraste">
                             <label for="contraste">CONTRASTE</label>
-                            <input type="range" name="contraste" min="100%" max="1000%" step="1%" value="100%">
+                            <input type="range" name="contraste" id="contraste" min="100%" max="1000%" step="1%"
+                                value="100%">
                         </div>
                         <div class="filtro_desenfoque">
                             <label for="desenfoque">DESENFOQUE</label>
-                            <input type="range" name="desenfoque" min="0px" max="10px" step="0.1px" value="0px">
+                            <input type="range" name="desenfoque" id="desenfoque" min="0px" max="10px" step="0.1px"
+                                value="0px">
                         </div>
                         <div class="filtro_grises">
                             <label for="grises">ESCALA DE GRISES</label>
-                            <input type="range" name="grises" min="0%" max="100%" step="1%" value="0%">
+                            <input type="range" name="grises" id="grises" min="0%" max="100%" step="1%" value="0%">
                         </div>
                         <div class="filtro_sepia">
                             <label for="sepia">SEPIA</label>
-                            <input type="range" name="sepia" min="0%" max="100%" step="1%" value="0%">
+                            <input type="range" name="sepia" id="sepia" min="0%" max="100%" step="1%" value="0%">
                         </div>
                         <div class="filtro_tono">
                             <label for="tono">ROTACION DE TONO</label>
-                            <input type="range" name="tono" min="0deg" max="359deg" step="1deg" value="0deg">
+                            <input type="range" name="tono" id="tono" min="0deg" max="359deg" step="1deg" value="0deg">
                         </div>
                         <div class="filtro_saturado">
                             <label for="saturado">SATURADO</label>
-                            <input type="range" name="saturado" min="100%" max="1000%" step="10%" value="100%">
+                            <input type="range" name="saturado" id="saturado" min="100%" max="1000%" step="10%"
+                                value="100%">
                         </div>
                         <div class="filtro_negativo">
                             <label for="negativo">NEGATIVO</label>
-                            <input type="range" name="negativo" min="0" max="1" step="0.1" value="1">
+                            <input type="range" name="negativo" id="negativo" min="0" max="1" step="0.1" value="1">
                         </div>
                     </div>
 
@@ -114,22 +117,22 @@
             </div>
             <!-- fin de la solapa imagen -->
 
-            <!-- comienzo de la solapa texto -->
-            <div class="contenedor_texto">
-                <buttton class="btn_cerrar">x</buttton>
+            <!-- comienzo de la solapa texto  -->
+            <div class="contenedor_texto" id="contenedor_texto">
+                <button class="btn_cerrar__texto" id="btn_cerrar__texto" type="button">x</button>
                 <h2 class="texto_titulo">TEXTO</h2>
 
                 <div class="texto_superior">
                     <label for="superior">SUPERIOR</label>
                     <textarea name="superior" id="superior" cols="30" rows="10">TEXTO SUPERIOR</textarea>
-                    <input type="checkbox" name="check_superior">
+                    <input type="checkbox" name="check_superior" id="check_superior">
                     <label for="check_superior">Sin texto superior</label>
                 </div>
 
                 <div class="texto_inferior">
                     <label for="inferior">INFERIOR</label>
                     <textarea name="inferior" id="inferior" cols="30" rows="10">TEXTO INFERIOR</textarea>
-                    <input type="checkbox" name="check_inferior">
+                    <input type="checkbox" name="check_inferior" id="check_inferior">
                     <label for="check_inferior">Sin texto inferior</label>
                 </div>
 
@@ -147,7 +150,7 @@
                         <option value="times_new_roman">Times New Roman</option>
                     </select>
                     <div class="contenedor_fuente_panel">
-                        <input type="number" name="fuente_tamaño" value="10">
+                        <input type="number" name="fuente_tamaño" id="fuente_tamaño" value="10">
                         <div class="fuente_btns">
                             <button class="btn_alineacion_izq"></button>
                             <button class="btn_alineacion_centro"></button>
@@ -159,15 +162,15 @@
                 <div class="texto_panel">
                     <div class="panel_color">
                         <label for="color">COLOR</label>
-                        <input type="color" name="color">
+                        <input type="color" name="color" id="color">
                         <span class="color">#000000</span>
                     </div>
                     <div class="panel_fondo">
                         <label for="fondo">FONDO</label>
-                        <input type="color" name="fondo">
+                        <input type="color" name="fondo" id="fondo">
                         <span class="fondo">#FFFFFF</span>
                     </div>
-                    <input type="checkbox" name="check_transparente">
+                    <input type="checkbox" name="check_transparente" id="check_transparente">
                     <label for="check_transparente">Fondo transparente</label>
                 </div>
 
@@ -182,7 +185,7 @@
 
                 <div class="texto_espaciado">
                     <label for="espaciado">ESPACIADO</label>
-                    <input type="number" name="espaciado">
+                    <input type="number" name="espaciado" id="espaciado">
                 </div>
 
                 <div class="texto_interlineado">
@@ -199,6 +202,7 @@
             <!-- fin de la solapa texto -->
         </aside>
         <!-- fin del aside -->
+
     </main>
     <!-- fin del main -->
 </body>
