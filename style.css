@@ -12,7 +12,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     font-size: large;
-    background-color: rgb(246 243 238);
+    background-color: #f6f3ee;
     position: fixed;
     z-index: 2;
 }
@@ -31,16 +31,44 @@ header {
 .btn_cerrar__texto {
     font-size: 15px;
     border: none;
-    padding-inline: 5px;
+    padding-inline: 11px;
     background-color: transparent;
+}
+
+.icono_imagen {
+    background: url(imagenes/img_btns_nav/imagen_claro.png);
+}
+
+.icono_texto {
+    background: url(imagenes/img_btns_nav/texto_claro.png);
+}
+
+.icono_modo {
+    background-image: url(imagenes/img_btns_nav/foco_claro.png);
+}
+
+.icono_imagen,
+.icono_texto,
+.icono_modo {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: 20px;
+    margin: -4px;
+}
+
+.imagen,
+.texto,
+.modo {
+    padding-inline: 4px;
 }
 
 main {
     /* height: calc(100vh - 107px);
-      display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-     background-color: rgb(139, 171, 221); */
+    background-color: rgb(139, 171, 221); */
     background-image: url(imagenes/img_fondo/flores.png);
     background-size: 750px;
     padding: 70px 20px;
@@ -90,4 +118,39 @@ main {
 .contenedor_texto {
     display: none;
     padding: 30px 0px;
+}
+
+/* estilos modo oscuro */
+
+body.oscuro header {
+    background-color: #404778;
+    color: aliceblue;
+}
+
+body.oscuro .btn_imagen,
+body.oscuro .btn_texto,
+body.oscuro .btn_modo {
+    color: aliceblue;
+}
+
+body.oscuro .icono_imagen {
+    background: url(imagenes/img_btns_nav/imagen_oscuro.png);
+}
+
+body.oscuro .icono_texto {
+    background: url(imagenes/img_btns_nav/texto_oscuro.png);
+}
+
+body.oscuro .icono_modo {
+    background: url(imagenes/img_btns_nav/foco_oscuro.png);
+}
+
+body.oscuro .icono_imagen,
+body.oscuro .icono_texto,
+body.oscuro .icono_modo {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: 20px;
+    margin: -4px;
 }
