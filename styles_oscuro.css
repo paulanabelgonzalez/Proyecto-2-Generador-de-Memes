@@ -1,0 +1,63 @@
+/* estilos modo oscuro */
+
+body.oscuro header {
+    background-color: #1b1e31;
+    color: aliceblue;
+}
+
+body.oscuro .btn_imagen,
+body.oscuro .btn_texto,
+body.oscuro .btn_modo,
+body.oscuro .btn_cerrar__imagen,
+body.oscuro .btn_cerrar__texto {
+    color: aliceblue;
+}
+
+body.oscuro .icono_imagen {
+    background: url(imagenes/img_btns_nav/imagen_oscuro.png);
+}
+
+body.oscuro .icono_texto {
+    background: url(imagenes/img_btns_nav/texto_oscuro.png);
+}
+
+body.oscuro .icono_modo {
+    background: url(imagenes/img_btns_nav/foco_oscuro.png);
+}
+
+body.oscuro .icono_imagen,
+body.oscuro .icono_texto,
+body.oscuro .icono_modo {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: 20px;
+    margin: -4px;
+}
+
+body.oscuro main {
+    background-color: #24294b;
+    color: aliceblue;
+}
+
+body.oscuro .meme_tex__superior,
+body.oscuro .meme_tex__inferior {
+    background-color: #1b1e31;
+}
+
+body.oscuro .meme_img {
+    background-color: #24294bd4
+}
+
+body.oscuro .btn_descargar {
+    background-color: #242740;
+    color: aliceblue;
+    border: 1px solid white;
+    border-radius: 3px
+}
+
+body.oscuro .contenedor_filtros,
+body.oscuro .contenedor_texto {
+    background-color: #24294bdb;
+    filter: none;
+}
