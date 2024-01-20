@@ -36,13 +36,12 @@
     <main>
         <!-- comienzo de la sección pantalla principal -->
         <div class="contenedor_principal">
-            <div class="meme">
-                <p class="meme_tex__superior">Texto Superior</p>
+            <div class="meme" id="meme">
+                <p class="meme_tex__superior" id="meme_tex__superior">Texto Superior</p>
                 <div class="meme_img" id="meme_img"></div>
-                <p class="meme_tex__inferior">Texto Inferior</p>
+                <p class="meme_tex__inferior" id="meme_tex__inferior">Texto Inferior</p>
             </div>
             <button class="btn_descargar">
-                <span class="img-descargar"></span>
                 <span class="tex-descargar">Descargar Meme</span>
             </button>
 
@@ -59,8 +58,13 @@
                         <div class="imagen_archivo">
                             <h3 class="archivo_titulo">SUBIR IMAGEN</h3>
                             <div class="stylo_label">
-                                <label for="archivo_url" class="archivo_url">url</label>
-                                <label for="archivo_pc" class="archivo_pc">pc</label>
+                                <label for="archivo_url" class="archivo_url" id="label_url">
+                                    <span class="img_url"></span>
+                                </label>
+                                <label for="archivo_pc" class="archivo_pc" id="label_pc">
+                                    <span class="img_pc"></span>
+
+                                </label>
                             </div>
 
                             <input type="url" name="archivo_url" class="archivo_url" id="archivo_url" value=" "
@@ -70,20 +74,26 @@
                         </div>
 
                         <div class="imagen_fondo">
-                            <h3 class="fondo_titulo"></h3>
+                            <h3 class="fondo_titulo">Fondo</h3>
 
                             <div class="fondo_contenedor">
-                                <input type="color" name="fondo" value="#FFFFFF">
-                                <span class="color">#FFFFFF</span>
+
+                                <div class="fondo_input">
+                                    <input type="color" name="fondo" value="#FFFFFF" class="img_fondo color"
+                                        id="img_fondo_color">
+                                    <span class="span_color" id="span_color">#fffffff</span>
+                                </div>
+
+                                <select name="fondo_menu" class="fondo_menu" id="fondo_menu">
+                                    <option value="unset" selected>Ninguno</option>
+                                    <option value="lighten">Aclarar</option>
+                                    <option value="darken">Oscurecer</option>
+                                    <option value="difference">Diferencia</option>
+                                    <option value="luminosity">Luminosidad</option>
+                                    <option value="multiply">Multiplicar</option>
+                                </select>
+
                             </div>
-                            <select name="fondo_menu">
-                                <option value="ninguno" selected>Ninguno</option>
-                                <option value="aclarar">Aclarar</option>
-                                <option value="oscurecer">Oscurecer</option>
-                                <option value="diferencia">Diferencia</option>
-                                <option value="luminosidad">Luminosidad</option>
-                                <option value="multiplicar">Multiplicar</option>
-                            </select>
                         </div>
 
                         <div class="imagen_filtros">
@@ -99,39 +109,38 @@
                             </div>
                             <div class="filtro_contraste">
                                 <label for="contraste">CONTRASTE</label>
-                                <input type="range" name="contraste" id="contraste" min="100%" max="1000%" step="1%"
-                                    value="100%">
+                                <input type="range" name="contraste" id="contraste" min="100" max="1000" step="1"
+                                    value="100">
                             </div>
                             <div class="filtro_desenfoque">
                                 <label for="desenfoque">DESENFOQUE</label>
-                                <input type="range" name="desenfoque" id="desenfoque" min="0px" max="10px" step="0.1px"
-                                    value="0px">
+                                <input type="range" name="desenfoque" id="desenfoque" min="0" max="10" step="0.1"
+                                    value="0">
                             </div>
                             <div class="filtro_grises">
                                 <label for="grises">ESCALA DE GRISES</label>
-                                <input type="range" name="grises" id="grises" min="0%" max="100%" step="1%" value="0%">
+                                <input type="range" name="grises" id="grises" min="0" max="100" step="1" value="0">
                             </div>
                             <div class="filtro_sepia">
                                 <label for="sepia">SEPIA</label>
-                                <input type="range" name="sepia" id="sepia" min="0%" max="100%" step="1%" value="0%">
+                                <input type="range" name="sepia" id="sepia" min="0" max="100" step="1" value="0">
                             </div>
                             <div class="filtro_tono">
                                 <label for="tono">ROTACION DE TONO</label>
-                                <input type="range" name="tono" id="tono" min="0deg" max="359deg" step="1deg"
-                                    value="0deg">
+                                <input type="range" name="tono" id="tono" min="0" max="359" step="1" value="0">
                             </div>
                             <div class="filtro_saturado">
                                 <label for="saturado">SATURADO</label>
-                                <input type="range" name="saturado" id="saturado" min="100%" max="1000%" step="10%"
-                                    value="100%">
+                                <input type="range" name="saturado" id="saturado" min="0" max="200" step="10"
+                                    value="100">
                             </div>
                             <div class="filtro_negativo">
                                 <label for="negativo">NEGATIVO</label>
-                                <input type="range" name="negativo" id="negativo" min="0" max="1" step="0.1" value="1">
+                                <input type="range" name="negativo" id="negativo" min="0" max="1" step="0.1" value="0">
                             </div>
                         </div>
 
-                        <input type="reset" value="Reestablecer Filtros">
+                        <input type="reset" value="Reestablecer Filtros" id="btn_reestablecer" class="btn_reestablecer">
                     </form>
                 </div>
                 <!-- fin de la solapa imagen -->
@@ -141,16 +150,16 @@
                     <button class="btn_cerrar__texto" id="btn_cerrar__texto" type="button">x</button>
                     <h2 class="texto_titulo">TEXTO</h2>
 
-                    <div class="texto_superior">
-                        <label for="superior">SUPERIOR</label>
-                        <textarea name="superior" id="superior" cols="30" rows="10">TEXTO SUPERIOR</textarea>
+                    <div class="contenedor_texto__superior">
+                        <label for="texto_superior">SUPERIOR</label>
+                        <textarea name="superior" id="texto_superior" cols="30" rows="10">TEXTO SUPERIOR</textarea>
                         <input type="checkbox" name="check_superior" id="check_superior">
                         <label for="check_superior">Sin texto superior</label>
                     </div>
 
-                    <div class="texto_inferior">
-                        <label for="inferior">INFERIOR</label>
-                        <textarea name="inferior" id="inferior" cols="30" rows="10">TEXTO INFERIOR</textarea>
+                    <div class="contenedor_texto__inferior">
+                        <label for="texto_inferior">INFERIOR</label>
+                        <textarea name="inferior" id="texto_inferior" cols="30" rows="10">TEXTO INFERIOR</textarea>
                         <input type="checkbox" name="check_inferior" id="check_inferior">
                         <label for="check_inferior">Sin texto inferior</label>
                     </div>
@@ -179,15 +188,15 @@
                     </div>
 
                     <div class="texto_panel">
-                        <div class="panel_color">
-                            <label for="color">COLOR</label>
-                            <input type="color" name="color" id="color" value="#000000">
-                            <span class="color">#000000</span>
+                        <div class="panel_texto">
+                            <label for="texto_color">COLOR</label>
+                            <input type="color" name="color" id="texto_color" class="texto_color" value="#000000">
+                            <span class="span_texto">#000000</span>
                         </div>
                         <div class="panel_fondo">
-                            <label for="fondo">FONDO</label>
-                            <input type="color" name="fondo" id="fondo" value="#FFFFFF">
-                            <span class="fondo">#FFFFFF</span>
+                            <label for="fondo_texto">FONDO</label>
+                            <input type="color" name="fondo" id="fondo_texto" value="#FFFFFF">
+                            <span class="span_fondo">#FFFFFF</span>
                         </div>
                         <input type="checkbox" name="check_transparente" id="check_transparente">
                         <label for="check_transparente">Fondo transparente</label>
@@ -227,5 +236,6 @@
 </body>
 <script src="main.js"></script>
 <script src="main_imagen.js"></script>
+<script src="main_texto.js"></script>
 
 </html>

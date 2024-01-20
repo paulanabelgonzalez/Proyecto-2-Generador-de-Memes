@@ -46,7 +46,7 @@ body.oscuro .meme_tex__inferior {
 }
 
 body.oscuro .meme_img {
-    background-color: #24294bd4
+    background-color: #24294bf5
 }
 
 body.oscuro .btn_descargar {
@@ -60,4 +60,25 @@ body.oscuro .contenedor_filtros,
 body.oscuro .contenedor_texto {
     background-color: #24294bdb;
     filter: none;
+}
+
+body.oscuro .img_url,
+body.oscuro .img_pc {
+    background-color: #1b1e31;
+}
+
+body.oscuro .img_url {
+    background-image: url(imagenes/img_imagen/url_oscuro.png);
+}
+
+body.oscuro .img_pc {
+    background-image: url(imagenes/img_imagen/pc_oscuro.png);
+}
+
+body.oscuro .span_color {
+    color: black;
+}
+
+body.oscuro input {
+    accent-color: #9f8e6f;
 }

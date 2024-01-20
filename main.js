@@ -6,6 +6,7 @@ const contenedorImagen = document.getElementById("contenedor_imagen");
 btnImagen.addEventListener("click", () => {
     contenedorImagen.style.display = "block"
     contenedorTexto.style.display = "none"
+    archivoUrl.style.display = "none"
 })
 
 // evento para aparecer el contenedor de texto e intercambiarla con la de imagen
