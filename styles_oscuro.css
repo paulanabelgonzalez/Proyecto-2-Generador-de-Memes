@@ -82,3 +82,20 @@ body.oscuro .span_color {
 body.oscuro input {
     accent-color: #9f8e6f;
 }
+
+body.oscuro .btn_alineacion {
+    background-color: #21253fab;
+    border: 1px solid #9f8e6f
+}
+
+body.oscuro .icono_izq {
+    background-image: url(imagenes/img_texto/izq_oscuro.png);
+}
+
+body.oscuro .icono_centro {
+    background-image: url(imagenes/img_texto/centro_oscuro.png);
+}
+
+body.oscuro .icono_der {
+    background-image: url(imagenes/img_texto/der_oscuro.png);
+}

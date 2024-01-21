@@ -98,7 +98,7 @@ main {
     width: 100%;
     height: 15%;
     text-align: center;
-    padding: 15px;
+    padding: 16px;
     border: 1px solid #9f8e6f;
     background-color: #eee7d7;
     position: absolute;
@@ -135,6 +135,7 @@ main {
 .contenedor_filtros,
 .contenedor_texto {
     border: 1px solid #9f8e6f;
+    background-color: #d9d4ca70;
     line-height: 36px;
     padding-inline: 16px;
     /* filter: sepia(1); */
@@ -176,12 +177,21 @@ input.archivo_url {
     display: none;
 }
 
-input.archivo_url {
+input.archivo_url,
+.texto_superior,
+.texto_inferior {
     width: 100%;
-    display: block;
+    height: 2rem;
     border: 1px solid #9f8e6f;
-    height: 32px;
     border-radius: 4px;
+}
+
+.texto_superior::placeholder,
+.texto_inferior::placeholder {
+    padding-top: 5px;
+}
+
+input.archivo_url {
     margin-top: 4px;
 }
 
@@ -248,4 +258,35 @@ input {
     margin-block: 7px;
 }
 
-/* background-blend-mode para el input ninguno*/
+.btn_alineacion {
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 4px;
+    /* font-size: 15px; */
+    /* padding-inline: 11px; */
+}
+
+.icono_izq,
+.icono_centro,
+.icono_der {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icono_izq {
+    background-image: url(imagenes/img_texto/izq_claro.png);
+    background-size: 20px;
+}
+
+.icono_centro {
+    background-image: url(imagenes/img_texto/centro_claro.png);
+}
+
+.icono_der {
+    background-image: url(imagenes/img_texto/der_claro.png);
+}

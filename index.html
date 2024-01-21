@@ -67,7 +67,7 @@
                                 </label>
                             </div>
 
-                            <input type="url" name="archivo_url" class="archivo_url" id="archivo_url" value=" "
+                            <input type="url" name="archivo_url" class="archivo_url" id="archivo_url" value=""
                                 placeholder="https://example.com">
 
                             <input type="file" name="archivo_pc" class="archivo_pc" id="archivo_pc">
@@ -152,37 +152,45 @@
 
                     <div class="contenedor_texto__superior">
                         <label for="texto_superior">SUPERIOR</label>
-                        <textarea name="superior" id="texto_superior" cols="30" rows="10">TEXTO SUPERIOR</textarea>
+                        <textarea name="superior" class="texto_superior" id="texto_superior" cols="30" rows="10"
+                            placeholder="TEXTO SUPERIOR"></textarea>
                         <input type="checkbox" name="check_superior" id="check_superior">
                         <label for="check_superior">Sin texto superior</label>
                     </div>
 
                     <div class="contenedor_texto__inferior">
                         <label for="texto_inferior">INFERIOR</label>
-                        <textarea name="inferior" id="texto_inferior" cols="30" rows="10">TEXTO INFERIOR</textarea>
+                        <textarea name="inferior" class="texto_inferior" id="texto_inferior" cols="30" rows="10"
+                            placeholder="TEXTO INFERIOR"></textarea>
                         <input type="checkbox" name="check_inferior" id="check_inferior">
                         <label for="check_inferior">Sin texto inferior</label>
                     </div>
 
                     <div class="texto_fuente">
                         <h3 class="fuente_titulo">FUENTE</h3>
-                        <select name="fuente_menu">
+                        <select name="fuente_menu" class="fuente_menu" id="fuente_menu">
                             <option value="arial" selected>Arial</option>
-                            <option value="arial_black">Arial Black</option>
-                            <option value="american_typewriter">American Typewriter</option>
-                            <option value="andale_mono">Andale Mono</option>
-                            <option value="comic_sans_ms">Comic Sans MS</option>
+                            <option value="arial black">Arial Black</option>
+                            <option value="american ypewriter">American Typewriter</option>
+                            <option value="andale mono">Andale Mono</option>
+                            <option value="comic sans ms">Comic Sans MS</option>
                             <option value="helvetica">Helvetica</option>
                             <option value="impact">Impact</option>
                             <option value="verdana">Verdana</option>
-                            <option value="times_new_roman">Times New Roman</option>
+                            <option value="times new roman">Times New Roman</option>
                         </select>
                         <div class="contenedor_fuente_panel">
-                            <input type="number" name="fuente_tamaño" id="fuente_tamaño" value="10">
+                            <input type="number" name="fuente_tamaño" id="fuente_tamaño" min="12" max="40" value="12">
                             <div class="fuente_btns">
-                                <button class="btn_alineacion_izq"></button>
-                                <button class="btn_alineacion_centro"></button>
-                                <button class="btn_alineacion_der"></button>
+                                <button class="btn_alineacion izq" id="btn_alineacion_izq">
+                                    <span class="icono_izq"></span>
+                                </button>
+                                <button class="btn_alineacion centro" id="btn_alineacion_centro">
+                                    <span class="icono_centro"></span>
+                                </button>
+                                <button class="btn_alineacion der" id="btn_alineacion_der">
+                                    <span class="icono_der"></span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -191,12 +199,13 @@
                         <div class="panel_texto">
                             <label for="texto_color">COLOR</label>
                             <input type="color" name="color" id="texto_color" class="texto_color" value="#000000">
-                            <span class="span_texto">#000000</span>
+                            <span class="span_texto" id="span_texto">#000000</span>
                         </div>
                         <div class="panel_fondo">
-                            <label for="fondo_texto">FONDO</label>
-                            <input type="color" name="fondo" id="fondo_texto" value="#FFFFFF">
-                            <span class="span_fondo">#FFFFFF</span>
+                            <label for="text_fondo_color">FONDO</label>
+                            <input type="color" name="fondo" id="text_fondo_color" value="#FFFFFF"
+                                class="text_fondo_color">
+                            <span class="span_fondo" id="span_fondo">#FFFFFF</span>
                         </div>
                         <input type="checkbox" name="check_transparente" id="check_transparente">
                         <label for="check_transparente">Fondo transparente</label>
@@ -205,26 +214,26 @@
                     <div class="texto_contorno">
                         <h3 class="contorno_titulo">CONTORNO</h3>
                         <div class="contorno_btns">
-                            <button class="btn_contorno_ninguno">Ninguno</button>
-                            <button class="btn_contorno_claro">Claro</button>
-                            <button class="btn_contorno_oscuro">Oscuro</button>
+                            <button class="btn_contorno_ninguno" id="btn_contorno_ninguno">Ninguno</button>
+                            <button class="btn_contorno_claro" id="btn_contorno_claro">Claro</button>
+                            <button class="btn_contorno_oscuro" id="btn_contorno_oscuro">Oscuro</button>
                         </div>
                     </div>
 
                     <div class="texto_espaciado">
                         <label for="espaciado">ESPACIADO</label>
-                        <input type="number" name="espaciado" id="espaciado">
+                        <input type="number" name="espaciado" id="espaciado" min="16" max="50" value="16">
                     </div>
 
                     <div class="texto_interlineado">
                         <h3 class="interlineado_titulo">INTERLINEADO</h3>
-                        <select name="interlineado_menu">
-                            <option value="valor1">0.8</option>
-                            <option value="valor2">1</option>
-                            <option value="valor3">1.2</option>
-                            <option value="valor4">1.5</option>
-                            <option value="valor5">2</option>
-                            <option value="valor6">2.5</option>
+                        <select name="interlineado_menu" class="interlineado_menu" id="interlineado_menu">
+                            <option value="0.8">0.8</option>
+                            <option value="1">1</option>
+                            <option value="1.2">1.2</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
                     </div>
                 </div>
                 <!-- fin de la solapa texto -->

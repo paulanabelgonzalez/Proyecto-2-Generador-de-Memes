@@ -51,11 +51,18 @@ console.log(imgFondoColor)
 const spanColor = document.getElementById("span_color");
 console.log(spanColor)
 
-imgFondoColor.addEventListener("input", () => {
-    console.log(imgFondoColor.value);
-    memeImg.style.backgroundColor = imgFondoColor.value;
-    spanColor.innerText = imgFondoColor.value // valor del imput color
-})
+// imgFondoColor.addEventListener("input", () => {
+//     console.log(imgFondoColor.value);
+//     memeImg.style.backgroundColor = imgFondoColor.value;
+//     spanColor.innerText = imgFondoColor.value // valor del imput color
+// })
+
+const cambiarColor = (contenedorColor, spanColor, color) => {
+    contenedorColor.style.backgroundColor = color.value
+    spanColor.innerText = color.value
+}
+
+imgFondoColor.addEventListener("input", () => cambiarColor(memeImg, spanColor, imgFondoColor))
 
 // fondo menu blend-mode
 const fondoMenu = document.getElementById("fondo_menu");
