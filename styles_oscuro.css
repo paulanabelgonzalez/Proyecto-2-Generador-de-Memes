@@ -75,7 +75,9 @@ body.oscuro .img_pc {
     background-image: url(imagenes/img_imagen/pc_oscuro.png);
 }
 
-body.oscuro .span_color {
+body.oscuro .span_color,
+body.oscuro .span_texto,
+body.oscuro .span_fondo {
     color: black;
 }
 

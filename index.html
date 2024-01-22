@@ -153,7 +153,7 @@
                     <div class="contenedor_texto__superior">
                         <label for="texto_superior">SUPERIOR</label>
                         <textarea name="superior" class="texto_superior" id="texto_superior" cols="30" rows="10"
-                            placeholder="TEXTO SUPERIOR"></textarea>
+                            placeholder="Texto Superior"></textarea>
                         <input type="checkbox" name="check_superior" id="check_superior">
                         <label for="check_superior">Sin texto superior</label>
                     </div>
@@ -161,7 +161,7 @@
                     <div class="contenedor_texto__inferior">
                         <label for="texto_inferior">INFERIOR</label>
                         <textarea name="inferior" class="texto_inferior" id="texto_inferior" cols="30" rows="10"
-                            placeholder="TEXTO INFERIOR"></textarea>
+                            placeholder="Texto Inferior"></textarea>
                         <input type="checkbox" name="check_inferior" id="check_inferior">
                         <label for="check_inferior">Sin texto inferior</label>
                     </div>
@@ -180,7 +180,8 @@
                             <option value="times new roman">Times New Roman</option>
                         </select>
                         <div class="contenedor_fuente_panel">
-                            <input type="number" name="fuente_tamaño" id="fuente_tamaño" min="12" max="40" value="12">
+                            <input type="number" name="fuente_tamaño" class="fuente_tamaño" id="fuente_tamaño" min="12"
+                                max="40" value="16">
                             <div class="fuente_btns">
                                 <button class="btn_alineacion izq" id="btn_alineacion_izq">
                                     <span class="icono_izq"></span>
@@ -196,16 +197,23 @@
                     </div>
 
                     <div class="texto_panel">
-                        <div class="panel_texto">
-                            <label for="texto_color">COLOR</label>
-                            <input type="color" name="color" id="texto_color" class="texto_color" value="#000000">
-                            <span class="span_texto" id="span_texto">#000000</span>
-                        </div>
-                        <div class="panel_fondo">
-                            <label for="text_fondo_color">FONDO</label>
-                            <input type="color" name="fondo" id="text_fondo_color" value="#FFFFFF"
-                                class="text_fondo_color">
-                            <span class="span_fondo" id="span_fondo">#FFFFFF</span>
+                        <div class="contenedor_panel">
+                            <div class="panel_texto">
+                                <label for="texto_color">COLOR</label>
+                                <div class="texto_color_input">
+                                    <input type="color" name="color" id="texto_color" class="texto_color"
+                                        value="#000000">
+                                    <span class="span_texto" id="span_texto">#000000</span>
+                                </div>
+                            </div>
+                            <div class="panel_fondo">
+                                <label for="text_fondo_color">FONDO</label>
+                                <div class="text_fondo_color_input">
+                                    <input type="color" name="fondo" id="text_fondo_color" value="#FFFFFF"
+                                        class="text_fondo_color">
+                                    <span class="span_fondo" id="span_fondo">#ffffff</span>
+                                </div>
+                            </div>
                         </div>
                         <input type="checkbox" name="check_transparente" id="check_transparente">
                         <label for="check_transparente">Fondo transparente</label>
@@ -222,7 +230,8 @@
 
                     <div class="texto_espaciado">
                         <label for="espaciado">ESPACIADO</label>
-                        <input type="number" name="espaciado" id="espaciado" min="16" max="50" value="16">
+                        <input type="number" name="espaciado" class="espaciado" id="espaciado" min="16" max="50"
+                            value="16">
                     </div>
 
                     <div class="texto_interlineado">

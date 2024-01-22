@@ -17,13 +17,6 @@ header {
     z-index: 2;
 }
 
-/* .nav_btns {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-} */
-
 .btn_imagen,
 .btn_texto,
 .btn_modo,
@@ -74,11 +67,6 @@ header {
 }
 
 main {
-    /* height: calc(100vh - 107px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(139, 171, 221); */
     background-image: url(imagenes/img_fondo/flores.png);
     background-size: 750px;
     padding: 70px 20px;
@@ -102,6 +90,7 @@ main {
     border: 1px solid #9f8e6f;
     background-color: #eee7d7;
     position: absolute;
+    z-index: 1;
 }
 
 .meme_tex__inferior {
@@ -109,9 +98,9 @@ main {
 }
 
 .meme_img {
+    height: 100%;
     border: 1px solid #9f8e6f;
     background-color: #f6f3eed6;
-    height: 100%;
     background-size: cover;
 }
 
@@ -122,13 +111,11 @@ main {
     padding: 15px;
 }
 
-/* aside {
-    border: 1px solid;
-    margin-top: 70px;
-} */
-
 .contenedor_imagen,
-.contenedor_texto {
+.contenedor_texto,
+input.archivo_pc,
+input.archivo_url,
+.ocultar {
     display: none;
 }
 
@@ -138,7 +125,6 @@ main {
     background-color: #d9d4ca70;
     line-height: 36px;
     padding-inline: 16px;
-    /* filter: sepia(1); */
     margin-top: 30px;
 }
 
@@ -172,23 +158,18 @@ main {
     background-size: 35px;
 }
 
-input.archivo_pc,
-input.archivo_url {
-    display: none;
-}
-
 input.archivo_url,
 .texto_superior,
-.texto_inferior {
+.texto_inferior,
+.fuente_menu,
+.espaciado,
+.interlineado_menu,
+.fuente_tamaño {
     width: 100%;
     height: 2rem;
     border: 1px solid #9f8e6f;
     border-radius: 4px;
-}
-
-.texto_superior::placeholder,
-.texto_inferior::placeholder {
-    padding-top: 5px;
+    padding: 6px
 }
 
 input.archivo_url {
@@ -199,7 +180,8 @@ input.archivo_url {
     padding-left: 5px;
 }
 
-.fondo_contenedor {
+.fondo_contenedor,
+.contenedor_panel {
     display: flex;
     justify-content: space-evenly;
     border: 1px solid #9f8e6f;
@@ -207,21 +189,34 @@ input.archivo_url {
 }
 
 .fondo_input,
-.fondo_menu {
+.fondo_menu,
+.panel_fondo,
+.panel_texto {
     width: calc(50% - 7px);
+}
+
+.fondo_input,
+.fondo_menu,
+.texto_color_input,
+.text_fondo_color_input,
+.interlineado_menu {
     border: 1px solid #9f8e6f;
     background-color: #f6f3ee;
     border-radius: 4px;
 }
 
-.fondo_input {
+.fondo_input,
+.texto_color_input,
+.text_fondo_color_input {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
 /* input color circulo */
-.color {
+.color,
+.texto_color,
+.text_fondo_color {
     background-color: transparent;
     width: 39px;
     height: 39px;
@@ -229,11 +224,15 @@ input.archivo_url {
     cursor: pointer;
 }
 
-.color::-webkit-color-swatch {
+.color::-webkit-color-swatch,
+.texto_color::-webkit-color-swatch,
+.text_fondo_color::-webkit-color-swatch {
     border-radius: 50%;
 }
 
-.span_color {
+.span_color,
+.span_texto,
+.span_fondo {
     width: 70px;
     font-size: 18px;
     letter-spacing: 1px;
@@ -243,14 +242,6 @@ input {
     accent-color: #a18551;
 }
 
-/* option {
-    color: #9f8e6f;
-} */
-
-.ocultar {
-    display: none;
-}
-
 .btn_reestablecer {
     width: 100%;
     padding: 10px;
@@ -258,13 +249,33 @@ input {
     margin-block: 7px;
 }
 
+.fuente_menu,
+.espaciado,
+.interlineado_menu,
+.fuente_tamaño {
+    background-color: #f6f3ee;
+}
+
+.contenedor_fuente_panel {
+    display: flex;
+    margin-top: 4px
+}
+
+.fuente_tamaño {
+    width: 64%;
+    height: 2.5rem;
+    background-color: #ffffff;
+}
+
+.fuente_btns {
+    width: 40%;
+    margin-left: 3px;
+}
+
 .btn_alineacion {
     width: 40px;
-    height: 40px;
-    border: 1px solid;
+    border: 1px solid #9f8e6f;
     border-radius: 4px;
-    /* font-size: 15px; */
-    /* padding-inline: 11px; */
 }
 
 .icono_izq,
@@ -289,4 +300,26 @@ input {
 
 .icono_der {
     background-image: url(imagenes/img_texto/der_claro.png);
+}
+
+.btn_contorno_ninguno,
+.btn_contorno_claro,
+.btn_contorno_oscuro {
+    width: 108px;
+    padding: 10px;
+    border: 1px solid #c9bfac;
+    border-radius: 4px
+}
+
+.texto_espaciado {
+    display: flex;
+    flex-direction: column;
+}
+
+.espaciado {
+    background-color: #ffffff;
+}
+
+.interlineado_menu {
+    margin-bottom: 20px
 }
