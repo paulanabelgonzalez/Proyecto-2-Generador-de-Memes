@@ -33,7 +33,7 @@ header {
     font-weight: bold;
     font-size: 26px;
     position: relative;
-    left: 270px;
+    left: 93%;
     top: 8px;
     color: #7d6d50;
 }
@@ -74,12 +74,19 @@ main {
     top: 107px;
 }
 
+.contenedor_principal {
+    display: flex;
+    flex-direction: column;
+}
+
 .meme {
-    /* width: 335px; */
-    height: 335px;
+    /* con width y height no lo puedo hacer responsive */
+    /* width: 335px;
+    height: 335px; */
     position: sticky;
     top: 107px;
     z-index: 2;
+    margin-bottom: 36px;
 }
 
 .meme_tex__superior,
@@ -111,10 +118,13 @@ main {
 }
 
 .btn_descargar {
-    position: relative;
+    /* no funciona el reponsive */
+    /* position: relative;
     left: 98px;
-    margin-top: 36px;
+    margin-top: 36px; */
+    width: 137px;
     padding: 15px;
+    margin: auto;
 }
 
 .contenedor_imagen,
