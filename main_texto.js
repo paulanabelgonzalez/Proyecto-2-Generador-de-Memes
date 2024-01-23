@@ -26,9 +26,56 @@ console.log(checkInferior);
 const ocultarContenedor = (checkbox, texto) => {
     console.log(checkbox.checked)
     texto.classList.toggle("ocultar")
+    // memeImg.style.height = "85%"
+    // memeImg.style.position = "sticky"
+    if (checkSuperior.checked == true && checkInferior.checked == false) {
+        memeImg.style.height = "85%"
+        memeImg.style.position = "sticky"
+    } else if (checkInferior.checked == true && checkSuperior.checked == false) {
+        memeImg.style.height = "85%"
+        memeImg.style.top = "15%"
+        memeImg.style.position = "relative"
+    } else if (checkSuperior.checked == true && checkInferior.checked == true) {
+        memeImg.style.height = "100%"
+        memeImg.style.position = "sticky"
+        console.log("hola")
+    } else if (checkSuperior.checked == true && checkInferior.checked == true && (checkTransparente.checked == true || checkTransparente.checked == false)) {
+        memeImg.style.height = "100%"
+        memeImg.style.position = "relative"
+    } else {
+        memeImg.style.height = "70%"
+        memeImg.style.position = "relative"
+        memeImg.style.top = "15%"
+    }
 }
 checkSuperior.addEventListener("change", () => ocultarContenedor(checkSuperior, memeTexSuperior));
 checkInferior.addEventListener("change", () => ocultarContenedor(checkInferior, memeTexInferior));
+
+// checkSuperior.addEventListener("change", () => {
+//     if (checkSuperior.checked == true || checkInferior.checked == true) {
+//         memeImg.style.height = "85%"
+//         memeImg.style.position = "sticky"
+//     } else if (checkSuperior.checked == true && checkInferior.checked == true) {
+//         memeImg.style.height = "100%"
+//         memeImg.style.position = "sticky"
+//     } else {
+//         memeImg.style.height = "70%"
+//         memeImg.style.position = "relative"
+//     }
+// });
+
+// checkInferior.addEventListener("change", () => {
+//     if (checkSuperior.checked == true || checkInferior.checked == true) {
+//         memeImg.style.height = "85%"
+//         memeImg.style.position = "sticky"
+//     } else if (checkSuperior.checked == true && checkInferior.checked == true) {
+//         memeImg.style.height = "100%"
+//         memeImg.style.position = "sticky"
+//     } else {
+//         memeImg.style.height = "70%"
+//         memeImg.style.position = "relative"
+//     }
+// });
 
 // fuente
 const fuenteMenu = document.getElementById("fuente_menu");
@@ -90,11 +137,15 @@ checkTransparente.addEventListener("change", () => {
         memeTexInferior.style.backgroundColor = "transparent"
         memeTexSuperior.style.border = "1px solid transparent"
         memeTexInferior.style.border = "1px solid transparent"
+        memeImg.style.height = "100%"
+        memeImg.style.position = "sticky"
     } else {
         memeTexSuperior.style.backgroundColor = textFondoColor.value
         memeTexInferior.style.backgroundColor = textFondoColor.value
         memeTexSuperior.style.border = "1px solid #9f8e6f"
         memeTexInferior.style.border = "1px solid #9f8e6f"
+        memeImg.style.height = "70%"
+        memeImg.style.position = "relative"
     }
 })
 
@@ -104,51 +155,25 @@ const btnContornoClaro = document.getElementById("btn_contorno_claro")
 const btnContornoOscuro = document.getElementById("btn_contorno_oscuro")
 console.log(btnContornoNinguno, btnContornoClaro, btnContornoOscuro)
 
-// const cambiarContorno = (valorContorno) => {
-//     memeTexSuperior.style.textShadow = valorContorno
-//     memeTexInferior.style.textShadow = valorContorno
-//     console.log("funciona")
-// }
+const cambiarContorno = (valorContorno) => {
+    memeTexSuperior.style.textShadow = valorContorno
+    memeTexInferior.style.textShadow = valorContorno
+    console.log("funciona")
+}
 
-// btnContornoNinguno.addEventListener("click", () => cambiarContorno("none"));
-// btnContornoClaro.addEventListener("click", () => cambiarContorno("white"));
-// btnContornoOscuro.addEventListener("click", () => cambiarContorno("black"));
-
-btnContornoNinguno.addEventListener("click", () => {
-    memeTexSuperior.style.textShadow = "none"
-    memeTexInferior.style.textShadow = "none"
-    console.log("perro")
-});
-
-btnContornoClaro.addEventListener("click", () => {
-    memeTexSuperior.style.textShadow = "rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px;rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px;"
-    memeTexInferior.style.textShadow = "2px 2px white"
-    console.log("perro")
-});
-
-btnContornoOscuro.addEventListener("click", () => {
-    memeTexSuperior.style.textShadow = "2px 2px black"
-    memeTexInferior.style.textShadow = "2px 2px black"
-    console.log("perro")
-});
+btnContornoNinguno.addEventListener("click", () => cambiarContorno("none"));
+btnContornoClaro.addEventListener("click", () => cambiarContorno("rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px"));
+btnContornoOscuro.addEventListener("click", () => cambiarContorno("rgb(0, 0, 0) 2px 2px, rgb(0, 0, 0) -2px 2px, rgb(0, 0, 0) 2px -2px, rgb(0, 0, 0) -2px -2px"));
 
 // espaciado
 const espaciado = document.getElementById("espaciado")
 
 espaciado.addEventListener("input", (e) => {
     let valorEspaciado = e.target.value
-    // if (memeTexSuperior.style.padding <= "16px" && memeTexInferior.style.padding <= "16px") {
     memeTexSuperior.style.height = "auto"
     memeTexInferior.style.height = "auto"
-    memeTexSuperior.style.padding = `${valorEspaciado}px`
-    memeTexInferior.style.padding = `${valorEspaciado}px`
-    // } else {
-    //     memeTexSuperior.style.height = "15%"
-    //     memeTexInferior.style.height = "15%"
-    //     memeTexSuperior.style.padding = "16px"
-    //     memeTexInferior.style.padding = "16px"
-    // } 
-    /*********me queda sin tamaño original, como hacer para que mantenga el tamaño del principio?*********/
+    memeTexSuperior.style.letterSpacing = `${valorEspaciado}px`
+    memeTexInferior.style.letterSpacing = `${valorEspaciado}px`
 })
 
 // interlineado 
@@ -157,4 +182,5 @@ const interlineadoMenu = document.getElementById("interlineado_menu")
 interlineadoMenu.addEventListener("change", () => {
     memeTexSuperior.style.lineHeight = interlineadoMenu.value
     memeTexInferior.style.lineHeight = interlineadoMenu.value
+    memeImg.style.height = `calc( 72% - ${interlineadoMenu.value * 4}px)`
 })

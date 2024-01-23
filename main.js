@@ -56,5 +56,20 @@ btnModo.addEventListener("click", () => {
     }
 })
 
+// crecer y disminuir el heigth de mi contenedor
 
+const meme = document.getElementById("meme")
 
+window.visualViewport.addEventListener("resize", () => {
+    meme.style.height = `calc(${window.visualViewport.width}px - 40px)`
+})
+
+// descargar imagen del DOM
+const btnDescargar = document.getElementById("btn_descargar")
+console.log(btnDescargar)
+
+btnDescargar.addEventListener("click", () => {
+    domtoimage.toBlob(meme).then((blob) => {
+        window.saveAs(blob, "meme.png");
+    });
+});

@@ -38,11 +38,16 @@ archivoPc.addEventListener("input", (e) => {
     if (archivo) {
         const lector = new FileReader();
         lector.onload = e => {
+            memeImg.style.height = "calc(memeImg.value - 30px )"
             memeImg.style.backgroundImage = `url(${e.target.result})`;
-            // archivoUrl.style.display = "none"
         }
         lector.readAsDataURL(archivo)
     }
+    // if (lector.readAsDataURL(archivo)) {
+
+    //     archivoUrl.style.display = "none"
+    //     meme.style.backgroundColor = "white"
+    // }
 });
 
 //cambiar el color de fondo
