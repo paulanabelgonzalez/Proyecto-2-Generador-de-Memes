@@ -80,9 +80,9 @@ main {
 }
 
 .meme {
-    /* con width y height no lo puedo hacer responsive */
-    /* width: 335px;
-    height: 335px; */
+    /* con width no lo puedo hacer responsive */
+    /* width: 335px;*/
+    height: 335px;
     position: sticky;
     top: 107px;
     z-index: 2;
@@ -221,6 +221,11 @@ input.archivo_url {
     border-radius: 4px;
 }
 
+.texto_color_input,
+.text_fondo_color_input {
+    background-color: #ffffff;
+}
+
 .fondo_input,
 .texto_color_input,
 .text_fondo_color_input {
@@ -250,8 +255,9 @@ input.archivo_url {
 .span_texto,
 .span_fondo {
     width: 70px;
+    display: flex;
     font-size: 18px;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
 input {

@@ -110,4 +110,13 @@ const btnReestablecer = document.getElementById("btn_reestablecer")
 
 btnReestablecer.addEventListener("click", () => {
     memeImg.style.filter = "none"
+    brillo.value = 1
+    contraste.value = 100
+    opacidad.value = 100
+    desenfoque.value = 0
+    grises.value = 0
+    sepia.value = 0
+    tono.value = 0
+    saturado.value = 100
+    negativo.value = 0
 })

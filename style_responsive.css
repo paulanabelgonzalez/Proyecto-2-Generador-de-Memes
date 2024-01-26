@@ -39,7 +39,7 @@
 
 @media (min-width: 1315px) {
     .contenedor_filtros {
-        line-height: 52px;
+        line-height: 50px;
         left: 0;
     }
 }
@@ -48,5 +48,14 @@
     .contenedor_texto {
         line-height: 45px;
         right: 0;
+    }
+}
+
+@media(min-width: 500px) {
+
+    .meme_tex__superior,
+    .meme_tex__inferior {
+        padding: 27px;
+        font-size: 1.5rem;
     }
 }

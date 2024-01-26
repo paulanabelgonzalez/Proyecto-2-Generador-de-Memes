@@ -58,7 +58,7 @@
             <aside class="contenedor" id="contenedor">
                 <!-- comienzo de la solapa imagen -->
                 <div class="contenedor_imagen" id="contenedor_imagen">
-                    <form action="" class="contenedor_filtros imagen">
+                    <div class="contenedor_filtros imagen">
                         <button class="btn_cerrar__imagen" id="btn_cerrar__imagen" type="button">x</button>
                         <h2 class="imagen_titulo">IMAGEN</h2>
 
@@ -89,7 +89,8 @@
                                 <div class="fondo_input">
                                     <input type="color" name="fondo" value="#FFFFFF" class="img_fondo color"
                                         id="img_fondo_color">
-                                    <span class="span_color" id="span_color">#fffffff</span>
+                                    <label for="img_fondo_color"><span class="span_color"
+                                            id="span_color">#fffffff</span></label>
                                 </div>
 
                                 <select name="fondo_menu" class="fondo_menu" id="fondo_menu">
@@ -149,7 +150,7 @@
                         </div>
 
                         <input type="reset" value="Reestablecer Filtros" id="btn_reestablecer" class="btn_reestablecer">
-                    </form>
+                    </div>
                 </div>
                 <!-- fin de la solapa imagen -->
 
@@ -207,19 +208,24 @@
                     <div class="texto_panel">
                         <div class="contenedor_panel">
                             <div class="panel_texto">
-                                <label for="texto_color">COLOR</label>
+                                <h4 class="titulo_color-input">COLOR</h4>
                                 <div class="texto_color_input">
                                     <input type="color" name="color" id="texto_color" class="texto_color"
                                         value="#000000">
-                                    <span class="span_texto" id="span_texto">#000000</span>
+                                    <label for="texto_color">
+                                        <span class="span_texto" id="span_texto">#000000</span>
+                                    </label>
+
                                 </div>
                             </div>
                             <div class="panel_fondo">
-                                <label for="text_fondo_color">FONDO</label>
+                                <h4 class="titulo_fondo_input">FONDO</h4>
                                 <div class="text_fondo_color_input">
-                                    <input type="color" name="fondo" id="text_fondo_color" value="#FFFFFF"
+                                    <input type="color" name="fondo" id="text_fondo_color" value="#eee7d7"
                                         class="text_fondo_color">
-                                    <span class="span_fondo" id="span_fondo">#ffffff</span>
+                                    <label for="text_fondo_color">
+                                        <span class="span_fondo" id="span_fondo">#eee7d7</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -238,8 +244,8 @@
 
                     <div class="texto_espaciado">
                         <label for="espaciado">ESPACIADO</label>
-                        <input type="number" name="espaciado" class="espaciado" id="espaciado" min="16" max="50"
-                            value="16">
+                        <input type="number" name="espaciado" class="espaciado" id="espaciado" min="0" max="10"
+                            value="0">
                     </div>
 
                     <div class="texto_interlineado">

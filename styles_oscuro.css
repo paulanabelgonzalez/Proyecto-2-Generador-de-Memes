@@ -59,7 +59,6 @@ body.oscuro .btn_descargar {
 body.oscuro .contenedor_filtros,
 body.oscuro .contenedor_texto {
     background-color: #24294bdb;
-    filter: none;
 }
 
 body.oscuro .img_url,
@@ -79,6 +78,11 @@ body.oscuro .span_color,
 body.oscuro .span_texto,
 body.oscuro .span_fondo {
     color: black;
+}
+
+body.oscuro .span_texto,
+body.oscuro .span_fondo {
+    background-color: #f6f3ee
 }
 
 body.oscuro input {

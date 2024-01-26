@@ -182,5 +182,5 @@ const interlineadoMenu = document.getElementById("interlineado_menu")
 interlineadoMenu.addEventListener("change", () => {
     memeTexSuperior.style.lineHeight = interlineadoMenu.value
     memeTexInferior.style.lineHeight = interlineadoMenu.value
-    memeImg.style.height = `calc( 72% - ${interlineadoMenu.value * 4}px)`
+    memeImg.style.height = `calc( 72% - ${interlineadoMenu.value * 2}%)`
 })

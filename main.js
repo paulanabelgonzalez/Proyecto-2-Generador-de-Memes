@@ -48,12 +48,22 @@ const btnModo = document.getElementById("btn_modo")
 const modo = document.getElementById("modo")
 btnModo.addEventListener("click", () => {
     document.body.classList.toggle("oscuro");
+
     // cambia el texto del boton
     if (modo.innerText == "Modo Claro") {
         modo.innerText = "Modo Oscuro"
     } else {
         modo.innerText = "Modo Claro"
     }
+
+    //    no anda y no se por que? preguntar
+    // if (textoColor.value == "#000000" && spanTexto == "#000000") {
+    //     textoColor.value == "#f0f8ff"
+    //     spanTexto.innerText == "#f0f8ff"
+    // } else {
+    //     textoColor.value == "#000000"
+    //     spanTexto.innerText == "#000000"
+    // }
 })
 
 // crecer y disminuir el heigth de mi contenedor
