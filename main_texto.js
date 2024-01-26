@@ -1,4 +1,5 @@
 // escribir en el contenedor
+
 const memeTexSuperior = document.getElementById("meme_tex__superior");
 console.log(memeTexSuperior)
 const textoSuperior = document.getElementById("texto_superior");
@@ -7,6 +8,7 @@ const memeTexInferior = document.getElementById("meme_tex__inferior");
 const textoInferior = document.getElementById("texto_inferior");
 
 // (escribir)
+
 textoSuperior.addEventListener("keyup", (e) => {
     console.log(e)
     memeTexSuperior.innerText = e.target.value
@@ -18,6 +20,7 @@ textoInferior.addEventListener("keyup", (e) => {
 })
 
 // sacar contenedor de texto
+
 const checkSuperior = document.getElementById("check_superior");
 console.log(checkSuperior);
 const checkInferior = document.getElementById("check_inferior");
@@ -51,33 +54,9 @@ const ocultarContenedor = (checkbox, texto) => {
 checkSuperior.addEventListener("change", () => ocultarContenedor(checkSuperior, memeTexSuperior));
 checkInferior.addEventListener("change", () => ocultarContenedor(checkInferior, memeTexInferior));
 
-// checkSuperior.addEventListener("change", () => {
-//     if (checkSuperior.checked == true || checkInferior.checked == true) {
-//         memeImg.style.height = "85%"
-//         memeImg.style.position = "sticky"
-//     } else if (checkSuperior.checked == true && checkInferior.checked == true) {
-//         memeImg.style.height = "100%"
-//         memeImg.style.position = "sticky"
-//     } else {
-//         memeImg.style.height = "70%"
-//         memeImg.style.position = "relative"
-//     }
-// });
 
-// checkInferior.addEventListener("change", () => {
-//     if (checkSuperior.checked == true || checkInferior.checked == true) {
-//         memeImg.style.height = "85%"
-//         memeImg.style.position = "sticky"
-//     } else if (checkSuperior.checked == true && checkInferior.checked == true) {
-//         memeImg.style.height = "100%"
-//         memeImg.style.position = "sticky"
-//     } else {
-//         memeImg.style.height = "70%"
-//         memeImg.style.position = "relative"
-//     }
-// });
+// fuente 
 
-// fuente
 const fuenteMenu = document.getElementById("fuente_menu");
 
 fuenteMenu.addEventListener("change", (e) => {
@@ -86,6 +65,7 @@ fuenteMenu.addEventListener("change", (e) => {
 })
 
 // tamaño 
+
 const fuenteTamaño = document.getElementById("fuente_tamaño")
 
 fuenteTamaño.addEventListener("input", (e) => {
@@ -95,6 +75,7 @@ fuenteTamaño.addEventListener("input", (e) => {
 })
 
 // alineación de texto
+
 const btnAlineacionIzq = document.getElementById("btn_alineacion_izq")
 const btnAlineacionCentro = document.getElementById("btn_alineacion_centro")
 const btnAlineacionDer = document.getElementById("btn_alineacion_der")
@@ -110,6 +91,7 @@ btnAlineacionCentro.addEventListener("click", () => cambiarAlineacion("center"))
 btnAlineacionDer.addEventListener("click", () => cambiarAlineacion("right"))
 
 // cambiar color de texto y fondo 
+
 const textoColor = document.getElementById("texto_color")
 const textFondoColor = document.getElementById("text_fondo_color")
 const spanTexto = document.getElementById("span_texto")
@@ -124,10 +106,12 @@ textoColor.addEventListener("input", () => {
 })
 
 // fondo del texto
+
 textFondoColor.addEventListener("input", () => cambiarColor(memeTexSuperior, spanFondo, textFondoColor))
 textFondoColor.addEventListener("input", () => cambiarColor(memeTexInferior, spanFondo, textFondoColor))
 
 //  poner fondo transparente
+
 const checkTransparente = document.getElementById("check_transparente")
 console.log(checkTransparente)
 
@@ -150,6 +134,7 @@ checkTransparente.addEventListener("change", () => {
 })
 
 // cambiar contorno
+
 const btnContornoNinguno = document.getElementById("btn_contorno_ninguno")
 const btnContornoClaro = document.getElementById("btn_contorno_claro")
 const btnContornoOscuro = document.getElementById("btn_contorno_oscuro")
@@ -166,6 +151,7 @@ btnContornoClaro.addEventListener("click", () => cambiarContorno("rgb(255, 255, 
 btnContornoOscuro.addEventListener("click", () => cambiarContorno("rgb(0, 0, 0) 2px 2px, rgb(0, 0, 0) -2px 2px, rgb(0, 0, 0) 2px -2px, rgb(0, 0, 0) -2px -2px"));
 
 // espaciado
+
 const espaciado = document.getElementById("espaciado")
 
 espaciado.addEventListener("input", (e) => {
@@ -177,6 +163,7 @@ espaciado.addEventListener("input", (e) => {
 })
 
 // interlineado 
+
 const interlineadoMenu = document.getElementById("interlineado_menu")
 
 interlineadoMenu.addEventListener("change", () => {

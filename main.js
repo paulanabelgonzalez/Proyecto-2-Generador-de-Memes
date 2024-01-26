@@ -75,6 +75,7 @@ window.visualViewport.addEventListener("resize", () => {
 })
 
 // descargar imagen del DOM
+
 const btnDescargar = document.getElementById("btn_descargar")
 console.log(btnDescargar)
 

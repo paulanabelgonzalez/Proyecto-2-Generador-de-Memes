@@ -19,6 +19,7 @@ labelPc.addEventListener("click", () => {
 const memeImg = document.getElementById("meme_img");
 
 // por input url
+
 const archivoUrl = document.getElementById("archivo_url");
 
 archivoUrl.addEventListener("input", () => {
@@ -30,6 +31,7 @@ archivoUrl.addEventListener("input", () => {
 })
 
 // por input file(pc)
+
 const archivoPc = document.getElementById("archivo_pc");
 
 archivoPc.addEventListener("input", (e) => {
@@ -51,6 +53,7 @@ archivoPc.addEventListener("input", (e) => {
 });
 
 //cambiar el color de fondo
+
 const imgFondoColor = document.getElementById("img_fondo_color");
 console.log(imgFondoColor)
 const spanColor = document.getElementById("span_color");
@@ -70,6 +73,7 @@ const cambiarColor = (contenedorColor, spanColor, color) => {
 imgFondoColor.addEventListener("input", () => cambiarColor(memeImg, spanColor, imgFondoColor))
 
 // fondo menu blend-mode
+
 const fondoMenu = document.getElementById("fondo_menu");
 console.log(fondoMenu)
 
@@ -79,6 +83,7 @@ fondoMenu.addEventListener("change", (e) => {
 })
 
 // filtros 
+
 const brillo = document.getElementById("brillo");
 const opacidad = document.getElementById("opacidad");
 const contraste = document.getElementById("contraste");
