@@ -33,14 +33,14 @@ const ocultarContenedor = (checkbox, texto) => {
     // memeImg.style.position = "sticky"
     if (checkSuperior.checked == true && checkInferior.checked == false) {
         memeImg.style.height = "85%"
-        memeImg.style.position = "sticky"
+        memeImg.style.position = "static"
     } else if (checkInferior.checked == true && checkSuperior.checked == false) {
         memeImg.style.height = "85%"
         memeImg.style.top = "15%"
         memeImg.style.position = "relative"
     } else if (checkSuperior.checked == true && checkInferior.checked == true) {
         memeImg.style.height = "100%"
-        memeImg.style.position = "sticky"
+        memeImg.style.position = "static"
         console.log("hola")
     } else if (checkSuperior.checked == true && checkInferior.checked == true && (checkTransparente.checked == true || checkTransparente.checked == false)) {
         memeImg.style.height = "100%"
@@ -122,7 +122,7 @@ checkTransparente.addEventListener("change", () => {
         memeTexSuperior.style.border = "1px solid transparent"
         memeTexInferior.style.border = "1px solid transparent"
         memeImg.style.height = "100%"
-        memeImg.style.position = "sticky"
+        memeImg.style.position = "static"
     } else {
         memeTexSuperior.style.backgroundColor = textFondoColor.value
         memeTexInferior.style.backgroundColor = textFondoColor.value
