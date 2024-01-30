@@ -69,3 +69,11 @@ Modo Claro\_ Modo Oscuro:
 ![gif de los modos](img_readme/modo.gif)
 
 Y lo más lindo e importante es que se pueden descargar.
+
+![foto de la imagen del meme.png](img_readme/meme.png)
+
+Este es el resultado!!!
+
+Espero que les guste mi proyecto, ya que fue muy satisfactorio para mi.
+
+GRACIAS.

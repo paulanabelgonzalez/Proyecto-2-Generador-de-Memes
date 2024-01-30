@@ -23,14 +23,6 @@ btnTexto.addEventListener("click", () => {
 
 const btnCerrarImagen = document.getElementById("btn_cerrar__imagen");
 const btnCerrarTexto = document.getElementById("btn_cerrar__texto");
-// let solapa = " "
-// const cerrarSolapa = () => {
-//     solapa.style.display = "none"
-// }
-// btnCerrarImagen.addEventListener("click", cerrarSolapa)
-// btnCerrarTexto.addEventListener("click", cerrarSolapa)
-
-//cerrar contenedor de imagen
 
 btnCerrarImagen.addEventListener("click", () => {
 	contenedorImagen.style.display = "none";
@@ -56,7 +48,7 @@ btnModo.addEventListener("click", () => {
 		modo.innerText = "Modo Claro";
 	}
 
-	//    no anda y no se por que? preguntar
+	//  cambia el value del input en modo oscuro
 	if (document.body.classList.contains("oscuro")) {
 		textoColor.value = "#f0f8ff";
 		spanTexto.innerText = "#f0f8ff";
@@ -81,7 +73,6 @@ window.visualViewport.addEventListener("resize", () => {
 // descargar imagen del DOM
 
 const btnDescargar = document.getElementById("btn_descargar");
-console.log(btnDescargar);
 
 btnDescargar.addEventListener("click", () => {
 	domtoimage.toBlob(meme).then((blob) => {

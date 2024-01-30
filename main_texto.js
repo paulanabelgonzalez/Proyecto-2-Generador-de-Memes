@@ -1,36 +1,29 @@
 // escribir en el contenedor
 
 const memeTexSuperior = document.getElementById("meme_tex__superior");
-console.log(memeTexSuperior);
 const textoSuperior = document.getElementById("texto_superior");
-console.log(textoSuperior);
 const memeTexInferior = document.getElementById("meme_tex__inferior");
 const textoInferior = document.getElementById("texto_inferior");
 
 // (escribir)
 
 textoSuperior.addEventListener("keyup", (e) => {
-	console.log(e);
 	memeTexSuperior.innerText = e.target.value;
 });
 
 textoInferior.addEventListener("keyup", (e) => {
-	console.log(e);
 	memeTexInferior.innerText = e.target.value;
 });
 
 // sacar contenedor de texto
 
 const checkSuperior = document.getElementById("check_superior");
-console.log(checkSuperior);
 const checkInferior = document.getElementById("check_inferior");
-console.log(checkInferior);
 
 const ocultarContenedor = (checkbox, texto) => {
 	console.log(checkbox.checked);
 	texto.classList.toggle("ocultar");
-	// memeImg.style.height = "85%"
-	// memeImg.style.position = "sticky"
+
 	if (checkSuperior.checked == true && checkInferior.checked == false) {
 		memeImg.style.height = "85%";
 		memeImg.style.position = "static";
@@ -41,7 +34,6 @@ const ocultarContenedor = (checkbox, texto) => {
 	} else if (checkSuperior.checked == true && checkInferior.checked == true) {
 		memeImg.style.height = "100%";
 		memeImg.style.position = "static";
-		console.log("hola");
 	} else if (
 		checkSuperior.checked == true &&
 		checkInferior.checked == true &&
@@ -86,7 +78,6 @@ fuenteTamaño.addEventListener("input", (e) => {
 const btnAlineacionIzq = document.getElementById("btn_alineacion_izq");
 const btnAlineacionCentro = document.getElementById("btn_alineacion_centro");
 const btnAlineacionDer = document.getElementById("btn_alineacion_der");
-console.log(btnAlineacionIzq, btnAlineacionCentro, btnAlineacionDer);
 
 const cambiarAlineacion = (alineacion) => {
 	memeTexSuperior.style.textAlign = alineacion;
@@ -126,7 +117,6 @@ textFondoColor.addEventListener("input", () =>
 //  poner fondo transparente
 
 const checkTransparente = document.getElementById("check_transparente");
-console.log(checkTransparente);
 
 checkTransparente.addEventListener("change", () => {
 	if (checkTransparente.checked == true) {
@@ -151,12 +141,10 @@ checkTransparente.addEventListener("change", () => {
 const btnContornoNinguno = document.getElementById("btn_contorno_ninguno");
 const btnContornoClaro = document.getElementById("btn_contorno_claro");
 const btnContornoOscuro = document.getElementById("btn_contorno_oscuro");
-console.log(btnContornoNinguno, btnContornoClaro, btnContornoOscuro);
 
 const cambiarContorno = (valorContorno) => {
 	memeTexSuperior.style.textShadow = valorContorno;
 	memeTexInferior.style.textShadow = valorContorno;
-	console.log("funciona");
 };
 
 btnContornoNinguno.addEventListener("click", () => cambiarContorno("none"));

@@ -23,11 +23,9 @@ const memeImg = document.getElementById("meme_img");
 const archivoUrl = document.getElementById("archivo_url");
 
 archivoUrl.addEventListener("input", () => {
-	console.log(archivoUrl.value);
 	memeImg.style.backgroundImage = `url(${archivoUrl.value})`;
 	memeImg.style.backgroundPosition = "center center";
-	// memeImg.style.backgroundRepeat = "no-repeat"
-	// memeImg.style.backgroundSize = "cover";
+	memeImg.style.backgroundSize = "cover";
 });
 
 // por input file(pc)
@@ -36,7 +34,6 @@ const archivoPc = document.getElementById("archivo_pc");
 
 archivoPc.addEventListener("input", (e) => {
 	const archivo = e.target.files[0];
-	console.log(e.target[0]);
 	if (archivo) {
 		const lector = new FileReader();
 		lector.onload = (e) => {
@@ -45,25 +42,12 @@ archivoPc.addEventListener("input", (e) => {
 		};
 		lector.readAsDataURL(archivo);
 	}
-	// if (lector.readAsDataURL(archivo)) {
-
-	//     archivoUrl.style.display = "none"
-	//     meme.style.backgroundColor = "white"
-	// }
 });
 
 //cambiar el color de fondo
 
 const imgFondoColor = document.getElementById("img_fondo_color");
-console.log(imgFondoColor);
 const spanColor = document.getElementById("span_color");
-console.log(spanColor);
-
-// imgFondoColor.addEventListener("input", () => {
-//     console.log(imgFondoColor.value);
-//     memeImg.style.backgroundColor = imgFondoColor.value;
-//     spanColor.innerText = imgFondoColor.value // valor del imput color
-// })
 
 const cambiarColor = (contenedorColor, spanColor, color) => {
 	contenedorColor.style.backgroundColor = color.value;
@@ -77,7 +61,6 @@ imgFondoColor.addEventListener("input", () =>
 // fondo menu blend-mode
 
 const fondoMenu = document.getElementById("fondo_menu");
-console.log(fondoMenu);
 
 fondoMenu.addEventListener("change", (e) => {
 	let opcionBlendMode = e.target.value;
@@ -98,7 +81,6 @@ const negativo = document.getElementById("negativo");
 
 const ponerFiltros = () => {
 	memeImg.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${grises.value}%) sepia(${sepia.value}%) hue-rotate(${tono.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
-	console.log(brillo.value);
 };
 
 brillo.addEventListener("input", ponerFiltros);
