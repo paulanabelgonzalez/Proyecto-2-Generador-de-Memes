@@ -3,16 +3,16 @@
 const labelUrl = document.getElementById("label_url");
 
 labelUrl.addEventListener("click", () => {
-    archivoUrl.style.display = "block"
-})
+	archivoUrl.style.display = "block";
+});
 
 // intercambiar input
 
 const labelPc = document.getElementById("label_pc");
 
 labelPc.addEventListener("click", () => {
-    archivoUrl.style.display = "none"
-})
+	archivoUrl.style.display = "none";
+});
 
 // función para cargar imagen
 
@@ -23,41 +23,41 @@ const memeImg = document.getElementById("meme_img");
 const archivoUrl = document.getElementById("archivo_url");
 
 archivoUrl.addEventListener("input", () => {
-    console.log(archivoUrl.value)
-    memeImg.style.backgroundImage = `url(${archivoUrl.value})`;
-    memeImg.style.backgroundPosition = "center center";
-    // memeImg.style.backgroundRepeat = "no-repeat"
-    // memeImg.style.backgroundSize = "cover";
-})
+	console.log(archivoUrl.value);
+	memeImg.style.backgroundImage = `url(${archivoUrl.value})`;
+	memeImg.style.backgroundPosition = "center center";
+	// memeImg.style.backgroundRepeat = "no-repeat"
+	// memeImg.style.backgroundSize = "cover";
+});
 
 // por input file(pc)
 
 const archivoPc = document.getElementById("archivo_pc");
 
 archivoPc.addEventListener("input", (e) => {
-    const archivo = e.target.files[0];
-    console.log(e.target[0])
-    if (archivo) {
-        const lector = new FileReader();
-        lector.onload = e => {
-            memeImg.style.height = "calc(memeImg.value - 30px )"
-            memeImg.style.backgroundImage = `url(${e.target.result})`;
-        }
-        lector.readAsDataURL(archivo)
-    }
-    // if (lector.readAsDataURL(archivo)) {
+	const archivo = e.target.files[0];
+	console.log(e.target[0]);
+	if (archivo) {
+		const lector = new FileReader();
+		lector.onload = (e) => {
+			memeImg.style.height = "calc(memeImg.value - 30px )";
+			memeImg.style.backgroundImage = `url(${e.target.result})`;
+		};
+		lector.readAsDataURL(archivo);
+	}
+	// if (lector.readAsDataURL(archivo)) {
 
-    //     archivoUrl.style.display = "none"
-    //     meme.style.backgroundColor = "white"
-    // }
+	//     archivoUrl.style.display = "none"
+	//     meme.style.backgroundColor = "white"
+	// }
 });
 
 //cambiar el color de fondo
 
 const imgFondoColor = document.getElementById("img_fondo_color");
-console.log(imgFondoColor)
+console.log(imgFondoColor);
 const spanColor = document.getElementById("span_color");
-console.log(spanColor)
+console.log(spanColor);
 
 // imgFondoColor.addEventListener("input", () => {
 //     console.log(imgFondoColor.value);
@@ -66,28 +66,30 @@ console.log(spanColor)
 // })
 
 const cambiarColor = (contenedorColor, spanColor, color) => {
-    contenedorColor.style.backgroundColor = color.value
-    spanColor.innerText = color.value
-}
+	contenedorColor.style.backgroundColor = color.value;
+	spanColor.innerText = color.value;
+};
 
-imgFondoColor.addEventListener("input", () => cambiarColor(memeImg, spanColor, imgFondoColor))
+imgFondoColor.addEventListener("input", () =>
+	cambiarColor(memeImg, spanColor, imgFondoColor)
+);
 
 // fondo menu blend-mode
 
 const fondoMenu = document.getElementById("fondo_menu");
-console.log(fondoMenu)
+console.log(fondoMenu);
 
 fondoMenu.addEventListener("change", (e) => {
-    let opcionBlendMode = e.target.value
-    memeImg.style.backgroundBlendMode = opcionBlendMode
-})
+	let opcionBlendMode = e.target.value;
+	memeImg.style.backgroundBlendMode = opcionBlendMode;
+});
 
-// filtros 
+// filtros
 
 const brillo = document.getElementById("brillo");
 const opacidad = document.getElementById("opacidad");
 const contraste = document.getElementById("contraste");
-const desenfoque = document.getElementById("desenfoque")
+const desenfoque = document.getElementById("desenfoque");
 const grises = document.getElementById("grises");
 const sepia = document.getElementById("sepia");
 const tono = document.getElementById("tono");
@@ -95,9 +97,9 @@ const saturado = document.getElementById("saturado");
 const negativo = document.getElementById("negativo");
 
 const ponerFiltros = () => {
-    memeImg.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${grises.value}%) sepia(${sepia.value}%) hue-rotate(${tono.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`
-    console.log(brillo.value)
-}
+	memeImg.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${grises.value}%) sepia(${sepia.value}%) hue-rotate(${tono.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
+	console.log(brillo.value);
+};
 
 brillo.addEventListener("input", ponerFiltros);
 opacidad.addEventListener("input", ponerFiltros);
@@ -111,17 +113,17 @@ negativo.addEventListener("input", ponerFiltros);
 
 // restablecer filtros
 
-const btnReestablecer = document.getElementById("btn_reestablecer")
+const btnReestablecer = document.getElementById("btn_reestablecer");
 
 btnReestablecer.addEventListener("click", () => {
-    memeImg.style.filter = "none"
-    brillo.value = 1
-    contraste.value = 100
-    opacidad.value = 100
-    desenfoque.value = 0
-    grises.value = 0
-    sepia.value = 0
-    tono.value = 0
-    saturado.value = 100
-    negativo.value = 0
-})
+	memeImg.style.filter = "none";
+	brillo.value = 1;
+	contraste.value = 100;
+	opacidad.value = 100;
+	desenfoque.value = 0;
+	grises.value = 0;
+	sepia.value = 0;
+	tono.value = 0;
+	saturado.value = 100;
+	negativo.value = 0;
+});

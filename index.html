@@ -1,329 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
-        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles_oscuro.css">
-    <link rel="stylesheet" href="style_responsive.css">
-    <title>Generador de Memes</title>
-</head>
-
-<body>
-    <!-- comienzo del header -->
-    <header>
-        <h1>Generador de Memes</h1>
-        <!-- comienzo del nav -->
-        <nav class="nav_btns">
-
-            <button class="btn_imagen" id="btn_imagen">
-                <span class="icono_imagen"></span>
-                <span class="imagen">Imagen</span>
-            </button>
-
-            <button class="btn_texto" id="btn_texto">
-                <span class="icono_texto"></span>
-                <span class="texto">Texto</span>
-            </button>
-
-            <button class="btn_modo" id="btn_modo">
-                <span class="icono_modo"></span>
-                <span class="modo" id="modo">Modo Oscuro</span>
-            </button>
-
-        </nav>
-        <!-- fin del nav -->
-    </header>
-    <!-- fin del header -->
-
-    <!-- comienzo del main -->
-    <main>
-        <!-- comienzo de la sección pantalla principal -->
-        <div class="contenedor_principal">
-
-            <div class="meme" id="meme">
-                <p class="meme_tex__superior" id="meme_tex__superior">Texto Superior</p>
-                <div class="meme_img" id="meme_img"></div>
-                <p class="meme_tex__inferior" id="meme_tex__inferior">Texto Inferior</p>
-            </div>
-
-            <button class="btn_descargar" id="btn_descargar">
-                <span class="tex-descargar">Descargar Meme</span>
-            </button>
-            <!-- fin de la sección pantalla principal -->
-
-            <!-- comienzo del aside -->
-            <aside class="contenedor" id="contenedor">
-                <!-- comienzo de la solapa imagen -->
-                <div class="contenedor_imagen" id="contenedor_imagen">
-
-                    <div class="contenedor_filtros imagen">
-
-                        <button class="btn_cerrar__imagen" id="btn_cerrar__imagen" type="button">x</button>
-                        <h2 class="imagen_titulo">IMAGEN</h2>
-
-                        <div class="imagen_archivo">
-
-                            <h3 class="archivo_titulo">SUBIR IMAGEN</h3>
-
-                            <div class="stylo_label">
-
-                                <label for="archivo_url" class="archivo_url" id="label_url">
-                                    <span class="img_url"></span>
-                                </label>
-                                <label for="archivo_pc" class="archivo_pc" id="label_pc">
-                                    <span class="img_pc"></span>
-                                </label>
-
-                            </div>
-
-                            <input type="url" name="archivo_url" class="archivo_url" id="archivo_url" value=""
-                                placeholder="https://example.com">
-
-                            <input type="file" name="archivo_pc" class="archivo_pc" id="archivo_pc"
-                                accept="image/png, image/gif, image/jpeg">
-
-                        </div>
-
-                        <div class="imagen_fondo">
-
-                            <h3 class="fondo_titulo">Fondo</h3>
-
-                            <div class="fondo_contenedor">
-
-                                <div class="fondo_input">
-
-                                    <input type="color" name="fondo" value="#FFFFFF" class="img_fondo color"
-                                        id="img_fondo_color">
-                                    <label for="img_fondo_color">
-                                        <span class="span_color" id="span_color">#fffffff</span>
-                                    </label>
-
-                                </div>
-
-                                <select name="fondo_menu" class="fondo_menu" id="fondo_menu">
-                                    <option value="unset" selected>Ninguno</option>
-                                    <option value="lighten">Aclarar</option>
-                                    <option value="darken">Oscurecer</option>
-                                    <option value="difference">Diferencia</option>
-                                    <option value="luminosity">Luminosidad</option>
-                                    <option value="multiply">Multiplicar</option>
-                                </select>
-
-                            </div>
-
-                        </div>
-
-                        <div class="imagen_filtros">
-
-                            <h3 class="filtros_titulo">FILTROS</h3>
-
-                            <div class="filtro_brillo">
-                                <label for="brillo">BRILLO</label>
-                                <input type="range" name="brillo" id="brillo" min="0" max="1" step="0.1" value="1">
-                            </div>
-
-                            <div class="filtro_opacidad">
-                                <label for="opacidad">OPACIDAD</label>
-                                <input type="range" name="opacidad" id="opacidad" min="0" max="1" step="0.1" value="1">
-                            </div>
-
-                            <div class="filtro_contraste">
-                                <label for="contraste">CONTRASTE</label>
-                                <input type="range" name="contraste" id="contraste" min="100" max="1000" step="1"
-                                    value="100">
-                            </div>
-
-                            <div class="filtro_desenfoque">
-                                <label for="desenfoque">DESENFOQUE</label>
-                                <input type="range" name="desenfoque" id="desenfoque" min="0" max="10" step="0.1"
-                                    value="0">
-                            </div>
-
-                            <div class="filtro_grises">
-                                <label for="grises">ESCALA DE GRISES</label>
-                                <input type="range" name="grises" id="grises" min="0" max="100" step="1" value="0">
-                            </div>
-
-                            <div class="filtro_sepia">
-                                <label for="sepia">SEPIA</label>
-                                <input type="range" name="sepia" id="sepia" min="0" max="100" step="1" value="0">
-                            </div>
-
-                            <div class="filtro_tono">
-                                <label for="tono">ROTACION DE TONO</label>
-                                <input type="range" name="tono" id="tono" min="0" max="359" step="1" value="0">
-                            </div>
-
-                            <div class="filtro_saturado">
-                                <label for="saturado">SATURADO</label>
-                                <input type="range" name="saturado" id="saturado" min="0" max="200" step="10"
-                                    value="100">
-                            </div>
-
-                            <div class="filtro_negativo">
-                                <label for="negativo">NEGATIVO</label>
-                                <input type="range" name="negativo" id="negativo" min="0" max="1" step="0.1" value="0">
-                            </div>
-
-                        </div>
-
-                        <input type="reset" value="Reestablecer Filtros" id="btn_reestablecer" class="btn_reestablecer">
-
-                    </div>
-
-                </div>
-                <!-- fin de la solapa imagen -->
-
-                <!-- comienzo de la solapa texto  -->
-                <div class="contenedor_texto" id="contenedor_texto">
-
-                    <button class="btn_cerrar__texto" id="btn_cerrar__texto" type="button">x</button>
-                    <h2 class="texto_titulo">TEXTO</h2>
-
-                    <div class="contenedor_texto__superior">
-                        <label for="texto_superior">SUPERIOR</label>
-                        <textarea name="superior" class="texto_superior" id="texto_superior" cols="30" rows="10"
-                            placeholder="Texto Superior"></textarea>
-                        <input type="checkbox" name="check_superior" id="check_superior">
-                        <label for="check_superior">Sin texto superior</label>
-                    </div>
-
-                    <div class="contenedor_texto__inferior">
-                        <label for="texto_inferior">INFERIOR</label>
-                        <textarea name="inferior" class="texto_inferior" id="texto_inferior" cols="30" rows="10"
-                            placeholder="Texto Inferior"></textarea>
-                        <input type="checkbox" name="check_inferior" id="check_inferior">
-                        <label for="check_inferior">Sin texto inferior</label>
-                    </div>
-
-                    <div class="texto_fuente">
-
-                        <h3 class="fuente_titulo">FUENTE</h3>
-
-                        <select name="fuente_menu" class="fuente_menu" id="fuente_menu">
-                            <option value="arial" selected>Arial</option>
-                            <option value="arial black">Arial Black</option>
-                            <option value="american ypewriter">American Typewriter</option>
-                            <option value="andale mono">Andale Mono</option>
-                            <option value="comic sans ms">Comic Sans MS</option>
-                            <option value="helvetica">Helvetica</option>
-                            <option value="impact">Impact</option>
-                            <option value="verdana">Verdana</option>
-                            <option value="times new roman">Times New Roman</option>
-                        </select>
-
-                        <div class="contenedor_fuente_panel">
-
-                            <input type="number" name="fuente_tamaño" class="fuente_tamaño" id="fuente_tamaño" min="12"
-                                max="40" value="16">
-
-                            <div class="fuente_btns">
-                                <button class="btn_alineacion izq" id="btn_alineacion_izq">
-                                    <span class="icono_izq"></span>
-                                </button>
-                                <button class="btn_alineacion centro" id="btn_alineacion_centro">
-                                    <span class="icono_centro"></span>
-                                </button>
-                                <button class="btn_alineacion der" id="btn_alineacion_der">
-                                    <span class="icono_der"></span>
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="texto_panel">
-
-                        <div class="contenedor_panel">
-
-                            <div class="panel_texto">
-
-                                <h4 class="titulo_color-input">COLOR</h4>
-
-                                <div class="texto_color_input">
-                                    <input type="color" name="color" id="texto_color" class="texto_color"
-                                        value="#000000">
-                                    <label for="texto_color">
-                                        <span class="span_texto" id="span_texto">#000000</span>
-                                    </label>
-
-                                </div>
-                            </div>
-
-                            <div class="panel_fondo">
-
-                                <h4 class="titulo_fondo_input">FONDO</h4>
-
-                                <div class="text_fondo_color_input">
-                                    <input type="color" name="fondo" id="text_fondo_color" value="#eee7d7"
-                                        class="text_fondo_color">
-                                    <label for="text_fondo_color">
-                                        <span class="span_fondo" id="span_fondo">#eee7d7</span>
-                                    </label>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <input type="checkbox" name="check_transparente" id="check_transparente">
-                        <label for="check_transparente">Fondo transparente</label>
-
-                    </div>
-
-                    <div class="texto_contorno">
-
-                        <h3 class="contorno_titulo">CONTORNO</h3>
-
-                        <div class="contorno_btns">
-                            <button class="btn_contorno_ninguno" id="btn_contorno_ninguno">Ninguno</button>
-                            <button class="btn_contorno_claro" id="btn_contorno_claro">Claro</button>
-                            <button class="btn_contorno_oscuro" id="btn_contorno_oscuro">Oscuro</button>
-                        </div>
-
-                    </div>
-
-                    <div class="texto_espaciado">
-                        <label for="espaciado">ESPACIADO</label>
-                        <input type="number" name="espaciado" class="espaciado" id="espaciado" min="0" max="10"
-                            value="0">
-                    </div>
-
-                    <div class="texto_interlineado">
-
-                        <h3 class="interlineado_titulo">INTERLINEADO</h3>
-
-                        <select name="interlineado_menu" class="interlineado_menu" id="interlineado_menu">
-                            <option value="0.8">0.8</option>
-                            <option value="1">1</option>
-                            <option value="1.2">1.2</option>
-                            <option value="1.5">1.5</option>
-                            <option value="2">2</option>
-                            <option value="2.5">2.5</option>
-                        </select>
-
-                    </div>
-
-                </div>
-                <!-- fin de la solapa texto -->
-            </aside>
-            <!-- fin del aside -->
-        </div>
-    </main>
-    <!-- fin del main -->
-</body>
-<script src="main.js"></script>
-<script src="main_imagen.js"></script>
-<script src="main_texto.js"></script>
-
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+			integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+			integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="styles_oscuro.css" />
+		<link rel="stylesheet" href="style_responsive.css" />
+		<title>Generador de Memes</title>
+	</head>
+
+	<body>
+		<!-- comienzo del header -->
+		<header>
+			<h1>Generador de Memes</h1>
+			<!-- comienzo del nav -->
+			<nav class="nav_btns">
+				<button class="btn_imagen" id="btn_imagen">
+					<span class="icono_imagen"></span>
+					<span class="imagen">Imagen</span>
+				</button>
+
+				<button class="btn_texto" id="btn_texto">
+					<span class="icono_texto"></span>
+					<span class="texto">Texto</span>
+				</button>
+
+				<button class="btn_modo" id="btn_modo">
+					<span class="icono_modo"></span>
+					<span class="modo" id="modo">Modo Oscuro</span>
+				</button>
+			</nav>
+			<!-- fin del nav -->
+		</header>
+		<!-- fin del header -->
+
+		<!-- comienzo del main -->
+		<main>
+			<!-- comienzo de la sección pantalla principal -->
+			<div class="contenedor_principal">
+				<div class="meme" id="meme">
+					<p class="meme_tex__superior" id="meme_tex__superior">
+						Texto Superior
+					</p>
+					<div class="meme_img" id="meme_img"></div>
+					<p class="meme_tex__inferior" id="meme_tex__inferior">
+						Texto Inferior
+					</p>
+				</div>
+
+				<button class="btn_descargar" id="btn_descargar">
+					<span class="tex-descargar">Descargar Meme</span>
+				</button>
+				<!-- fin de la sección pantalla principal -->
+
+				<!-- comienzo del aside -->
+				<aside class="contenedor" id="contenedor">
+					<!-- comienzo de la solapa imagen -->
+					<div class="contenedor_imagen" id="contenedor_imagen">
+						<div class="contenedor_filtros imagen">
+							<button
+								class="btn_cerrar__imagen"
+								id="btn_cerrar__imagen"
+								type="button"
+							>
+								x
+							</button>
+							<h2 class="imagen_titulo">IMAGEN</h2>
+
+							<div class="imagen_archivo">
+								<h3 class="archivo_titulo">SUBIR IMAGEN</h3>
+
+								<div class="stylo_label">
+									<label for="archivo_url" class="archivo_url" id="label_url">
+										<span class="img_url"></span>
+									</label>
+									<label for="archivo_pc" class="archivo_pc" id="label_pc">
+										<span class="img_pc"></span>
+									</label>
+								</div>
+
+								<input
+									type="url"
+									name="archivo_url"
+									class="archivo_url"
+									id="archivo_url"
+									value=""
+									placeholder="https://example.com"
+								/>
+
+								<input
+									type="file"
+									name="archivo_pc"
+									class="archivo_pc"
+									id="archivo_pc"
+									accept="image/png, image/gif, image/jpeg"
+								/>
+							</div>
+
+							<div class="imagen_fondo">
+								<h3 class="fondo_titulo">Fondo</h3>
+
+								<div class="fondo_contenedor">
+									<div class="fondo_input">
+										<input
+											type="color"
+											name="fondo"
+											value="#FFFFFF"
+											class="img_fondo color"
+											id="img_fondo_color"
+										/>
+										<label for="img_fondo_color">
+											<span class="span_color" id="span_color">#fffffff</span>
+										</label>
+									</div>
+
+									<select name="fondo_menu" class="fondo_menu" id="fondo_menu">
+										<option value="unset" selected>Ninguno</option>
+										<option value="lighten">Aclarar</option>
+										<option value="darken">Oscurecer</option>
+										<option value="difference">Diferencia</option>
+										<option value="luminosity">Luminosidad</option>
+										<option value="multiply">Multiplicar</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="imagen_filtros">
+								<h3 class="filtros_titulo">FILTROS</h3>
+
+								<div class="filtro_brillo">
+									<label for="brillo">BRILLO</label>
+									<input
+										type="range"
+										name="brillo"
+										id="brillo"
+										min="0"
+										max="1"
+										step="0.1"
+										value="1"
+									/>
+								</div>
+
+								<div class="filtro_opacidad">
+									<label for="opacidad">OPACIDAD</label>
+									<input
+										type="range"
+										name="opacidad"
+										id="opacidad"
+										min="0"
+										max="1"
+										step="0.1"
+										value="1"
+									/>
+								</div>
+
+								<div class="filtro_contraste">
+									<label for="contraste">CONTRASTE</label>
+									<input
+										type="range"
+										name="contraste"
+										id="contraste"
+										min="100"
+										max="1000"
+										step="1"
+										value="100"
+									/>
+								</div>
+
+								<div class="filtro_desenfoque">
+									<label for="desenfoque">DESENFOQUE</label>
+									<input
+										type="range"
+										name="desenfoque"
+										id="desenfoque"
+										min="0"
+										max="10"
+										step="0.1"
+										value="0"
+									/>
+								</div>
+
+								<div class="filtro_grises">
+									<label for="grises">ESCALA DE GRISES</label>
+									<input
+										type="range"
+										name="grises"
+										id="grises"
+										min="0"
+										max="100"
+										step="1"
+										value="0"
+									/>
+								</div>
+
+								<div class="filtro_sepia">
+									<label for="sepia">SEPIA</label>
+									<input
+										type="range"
+										name="sepia"
+										id="sepia"
+										min="0"
+										max="100"
+										step="1"
+										value="0"
+									/>
+								</div>
+
+								<div class="filtro_tono">
+									<label for="tono">ROTACION DE TONO</label>
+									<input
+										type="range"
+										name="tono"
+										id="tono"
+										min="0"
+										max="359"
+										step="1"
+										value="0"
+									/>
+								</div>
+
+								<div class="filtro_saturado">
+									<label for="saturado">SATURADO</label>
+									<input
+										type="range"
+										name="saturado"
+										id="saturado"
+										min="0"
+										max="200"
+										step="10"
+										value="100"
+									/>
+								</div>
+
+								<div class="filtro_negativo">
+									<label for="negativo">NEGATIVO</label>
+									<input
+										type="range"
+										name="negativo"
+										id="negativo"
+										min="0"
+										max="1"
+										step="0.1"
+										value="0"
+									/>
+								</div>
+							</div>
+
+							<input
+								type="reset"
+								value="Reestablecer Filtros"
+								id="btn_reestablecer"
+								class="btn_reestablecer"
+							/>
+						</div>
+					</div>
+					<!-- fin de la solapa imagen -->
+
+					<!-- comienzo de la solapa texto  -->
+					<div class="contenedor_texto" id="contenedor_texto">
+						<button
+							class="btn_cerrar__texto"
+							id="btn_cerrar__texto"
+							type="button"
+						>
+							x
+						</button>
+						<h2 class="texto_titulo">TEXTO</h2>
+
+						<div class="contenedor_texto__superior">
+							<label for="texto_superior">SUPERIOR</label>
+							<textarea
+								name="superior"
+								class="texto_superior"
+								id="texto_superior"
+								cols="30"
+								rows="10"
+								placeholder="Texto Superior"
+							></textarea>
+							<input
+								type="checkbox"
+								name="check_superior"
+								id="check_superior"
+							/>
+							<label for="check_superior">Sin texto superior</label>
+						</div>
+
+						<div class="contenedor_texto__inferior">
+							<label for="texto_inferior">INFERIOR</label>
+							<textarea
+								name="inferior"
+								class="texto_inferior"
+								id="texto_inferior"
+								cols="30"
+								rows="10"
+								placeholder="Texto Inferior"
+							></textarea>
+							<input
+								type="checkbox"
+								name="check_inferior"
+								id="check_inferior"
+							/>
+							<label for="check_inferior">Sin texto inferior</label>
+						</div>
+
+						<div class="texto_fuente">
+							<h3 class="fuente_titulo">FUENTE</h3>
+
+							<select name="fuente_menu" class="fuente_menu" id="fuente_menu">
+								<option value="arial" selected>Arial</option>
+								<option value="arial black">Arial Black</option>
+								<option value="american ypewriter">American Typewriter</option>
+								<option value="andale mono">Andale Mono</option>
+								<option value="comic sans ms">Comic Sans MS</option>
+								<option value="helvetica">Helvetica</option>
+								<option value="impact">Impact</option>
+								<option value="verdana">Verdana</option>
+								<option value="times new roman">Times New Roman</option>
+							</select>
+
+							<div class="contenedor_fuente_panel">
+								<input
+									type="number"
+									name="fuente_tamaño"
+									class="fuente_tamaño"
+									id="fuente_tamaño"
+									min="12"
+									max="40"
+									value="16"
+								/>
+
+								<div class="fuente_btns">
+									<button class="btn_alineacion izq" id="btn_alineacion_izq">
+										<span class="icono_izq"></span>
+									</button>
+									<button
+										class="btn_alineacion centro"
+										id="btn_alineacion_centro"
+									>
+										<span class="icono_centro"></span>
+									</button>
+									<button class="btn_alineacion der" id="btn_alineacion_der">
+										<span class="icono_der"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="texto_panel">
+							<div class="contenedor_panel">
+								<div class="panel_texto">
+									<h4 class="titulo_color-input">COLOR</h4>
+
+									<div class="texto_color_input">
+										<input
+											type="color"
+											name="color"
+											id="texto_color"
+											class="texto_color"
+											value="#000000"
+										/>
+										<label for="texto_color">
+											<span class="span_texto" id="span_texto">#000000</span>
+										</label>
+									</div>
+								</div>
+
+								<div class="panel_fondo">
+									<h4 class="titulo_fondo_input">FONDO</h4>
+
+									<div class="text_fondo_color_input">
+										<input
+											type="color"
+											name="fondo"
+											id="text_fondo_color"
+											value="#eee7d7"
+											class="text_fondo_color"
+										/>
+										<label for="text_fondo_color">
+											<span class="span_fondo" id="span_fondo">#eee7d7</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<input
+								type="checkbox"
+								name="check_transparente"
+								id="check_transparente"
+							/>
+							<label for="check_transparente">Fondo transparente</label>
+						</div>
+
+						<div class="texto_contorno">
+							<h3 class="contorno_titulo">CONTORNO</h3>
+
+							<div class="contorno_btns">
+								<button class="btn_contorno_ninguno" id="btn_contorno_ninguno">
+									Ninguno
+								</button>
+								<button class="btn_contorno_claro" id="btn_contorno_claro">
+									Claro
+								</button>
+								<button class="btn_contorno_oscuro" id="btn_contorno_oscuro">
+									Oscuro
+								</button>
+							</div>
+						</div>
+
+						<div class="texto_espaciado">
+							<label for="espaciado">ESPACIADO</label>
+							<input
+								type="number"
+								name="espaciado"
+								class="espaciado"
+								id="espaciado"
+								min="0"
+								max="10"
+								value="0"
+							/>
+						</div>
+
+						<div class="texto_interlineado">
+							<h3 class="interlineado_titulo">INTERLINEADO</h3>
+
+							<select
+								name="interlineado_menu"
+								class="interlineado_menu"
+								id="interlineado_menu"
+							>
+								<option value="0.8">0.8</option>
+								<option value="1">1</option>
+								<option value="1.2">1.2</option>
+								<option value="1.5">1.5</option>
+								<option value="2">2</option>
+								<option value="2.5">2.5</option>
+							</select>
+						</div>
+					</div>
+					<!-- fin de la solapa texto -->
+				</aside>
+				<!-- fin del aside -->
+			</div>
+		</main>
+		<!-- fin del main -->
+	</body>
+	<script src="main.js"></script>
+	<script src="main_imagen.js"></script>
+	<script src="main_texto.js"></script>
 </html>

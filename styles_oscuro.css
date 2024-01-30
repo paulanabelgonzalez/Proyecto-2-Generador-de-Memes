@@ -1,8 +1,8 @@
 /* estilos modo oscuro */
 
 body.oscuro header {
-    background-color: #1b1e31;
-    color: aliceblue;
+	background-color: #1b1e31;
+	color: aliceblue;
 }
 
 body.oscuro .btn_imagen,
@@ -10,98 +10,98 @@ body.oscuro .btn_texto,
 body.oscuro .btn_modo,
 body.oscuro .btn_cerrar__imagen,
 body.oscuro .btn_cerrar__texto {
-    color: aliceblue;
+	color: aliceblue;
 }
 
 body.oscuro .icono_imagen {
-    background: url(imagenes/img_btns_nav/imagen_oscuro.png);
+	background: url(imagenes/img_btns_nav/imagen_oscuro.png);
 }
 
 body.oscuro .icono_texto {
-    background: url(imagenes/img_btns_nav/texto_oscuro.png);
+	background: url(imagenes/img_btns_nav/texto_oscuro.png);
 }
 
 body.oscuro .icono_modo {
-    background: url(imagenes/img_btns_nav/foco_oscuro.png);
+	background: url(imagenes/img_btns_nav/foco_oscuro.png);
 }
 
 body.oscuro .icono_imagen,
 body.oscuro .icono_texto,
 body.oscuro .icono_modo {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-size: 20px;
-    margin: -4px;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-size: 20px;
+	margin: -4px;
 }
 
 body.oscuro main {
-    background-color: #24294b;
-    color: aliceblue;
+	background-color: #24294b;
+	color: aliceblue;
 }
 
 body.oscuro .meme_tex__superior,
 body.oscuro .meme_tex__inferior {
-    background-color: #1b1e31;
+	background-color: #1b1e31;
 }
 
 body.oscuro .meme {
-    background-color: #24294bfa
+	background-color: #24294bfa;
 }
 
 body.oscuro .btn_descargar {
-    background-color: #242740;
-    color: aliceblue;
-    border: 1px solid white;
-    border-radius: 3px
+	background-color: #242740;
+	color: aliceblue;
+	border: 1px solid white;
+	border-radius: 3px;
 }
 
 body.oscuro .contenedor_filtros,
 body.oscuro .contenedor_texto {
-    background-color: #24294bdb;
+	background-color: #24294bdb;
 }
 
 body.oscuro .img_url,
 body.oscuro .img_pc {
-    background-color: #1b1e31;
+	background-color: #1b1e31;
 }
 
 body.oscuro .img_url {
-    background-image: url(imagenes/img_imagen/url_oscuro.png);
+	background-image: url(imagenes/img_imagen/url_oscuro.png);
 }
 
 body.oscuro .img_pc {
-    background-image: url(imagenes/img_imagen/pc_oscuro.png);
+	background-image: url(imagenes/img_imagen/pc_oscuro.png);
 }
 
 body.oscuro .span_color,
 body.oscuro .span_texto,
 body.oscuro .span_fondo {
-    color: black;
+	color: black;
 }
 
-body.oscuro .span_texto,
-body.oscuro .span_fondo {
-    background-color: #f6f3ee
+body.oscuro .texto_color_input,
+body.oscuro .text_fondo_color_input {
+	background-color: #f6f3ee;
 }
 
 body.oscuro input {
-    accent-color: #9f8e6f;
+	accent-color: #9f8e6f;
 }
 
 body.oscuro .btn_alineacion {
-    background-color: #21253fab;
-    border: 1px solid #9f8e6f
+	background-color: #21253fab;
+	border: 1px solid #9f8e6f;
 }
 
 body.oscuro .icono_izq {
-    background-image: url(imagenes/img_texto/izq_oscuro.png);
+	background-image: url(imagenes/img_texto/izq_oscuro.png);
 }
 
 body.oscuro .icono_centro {
-    background-image: url(imagenes/img_texto/centro_oscuro.png);
+	background-image: url(imagenes/img_texto/centro_oscuro.png);
 }
 
 body.oscuro .icono_der {
-    background-image: url(imagenes/img_texto/der_oscuro.png);
+	background-image: url(imagenes/img_texto/der_oscuro.png);
 }

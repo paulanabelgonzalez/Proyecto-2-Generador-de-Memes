@@ -1,61 +1,63 @@
 @media (min-width: 970px) {
-    main {
-        background-size: 978px;
-    }
+	main {
+		background-size: 978px;
+	}
 }
 
 @media (min-width: 700px) {
-    .meme {
-        width: 600px;
-        height: 600px;
-        max-width: 600px;
-        max-height: 600px;
-        margin: auto;
-        margin-bottom: 57px;
-    }
+	.contenedor_principal {
+		align-items: center;
+	}
 }
 
 @media (min-width: 700px) {
+	.meme {
+		width: 600px;
+		height: 600px;
+		max-width: 600px;
+		max-height: 600px;
+		margin-bottom: 57px;
+	}
+}
 
-    .contenedor_filtros,
-    .contenedor_texto {
-        max-width: 600px;
-        margin: auto;
-        margin-top: 30px;
-    }
+@media (min-width: 700px) {
+	.contenedor_filtros,
+	.contenedor_texto {
+		max-width: 600px;
+		margin: auto;
+		margin-top: 30px;
+	}
 }
 
 @media (min-width: 1315px) {
-
-    .contenedor_filtros,
-    .contenedor_texto {
-        width: 335px;
-        height: 953px;
-        position: absolute;
-        bottom: 0;
-        z-index: 2;
-    }
+	.contenedor_filtros,
+	.contenedor_texto {
+		width: 335px;
+		height: 953px;
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+	}
 }
 
 @media (min-width: 1315px) {
-    .contenedor_filtros {
-        line-height: 50px;
-        left: 0;
-    }
+	.contenedor_filtros {
+		line-height: 50px;
+		left: 0;
+	}
 }
 
 @media (min-width: 1315px) {
-    .contenedor_texto {
-        line-height: 45px;
-        right: 0;
-    }
+	.contenedor_texto {
+		line-height: 45px;
+		right: 0;
+	}
 }
 
-@media(min-width: 500px) {
-
-    .meme_tex__superior,
-    .meme_tex__inferior {
-        padding: 27px;
-        font-size: 1.5rem;
-    }
+@media (min-width: 500px) {
+	.meme_tex__superior,
+	.meme_tex__inferior {
+		padding: 27px;
+		font-size: 1.5rem;
+	}
 }
