@@ -21,7 +21,6 @@ const checkSuperior = document.getElementById("check_superior");
 const checkInferior = document.getElementById("check_inferior");
 
 const ocultarContenedor = (checkbox, texto) => {
-	console.log(checkbox.checked);
 	texto.classList.toggle("ocultar");
 
 	if (checkSuperior.checked == true && checkInferior.checked == false) {

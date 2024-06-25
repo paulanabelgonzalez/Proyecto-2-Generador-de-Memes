@@ -23,9 +23,7 @@ const btnTexto = document.getElementById("btn_texto");
 const contenedorTexto = document.getElementById("contenedor_texto");
 const contenedorPrincipal = document.querySelector(".contenedor_principal");
 const main = document.querySelector("main");
-console.log(main);
 const body = document.querySelector("body");
-console.log(body);
 
 btnTexto.addEventListener("click", () => {
 	contenedorTexto.style.display = "flex";
@@ -39,7 +37,6 @@ btnTexto.addEventListener("click", () => {
 		main.style.justifyContent = "center";
 	}
 });
-console.log(contenedorPrincipal);
 
 // evento para cerrar contenedores
 
@@ -58,7 +55,6 @@ btnCerrarTexto.addEventListener("click", () => {
 	contenedorTexto.style.display = "none";
 	contenedorPrincipal.style.width = "100%";
 	main.style.justifyContent = "center";
-	// contenedorPrincipal.style.alignItems = "center";
 });
 
 // modo claro y modo oscuro
