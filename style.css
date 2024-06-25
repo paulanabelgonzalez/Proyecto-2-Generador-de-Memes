@@ -4,9 +4,14 @@
 	box-sizing: border-box;
 }
 
+body {
+	/* probando */
+	position: relative;
+}
+
 header {
 	width: 100%;
-	height: 107px;
+	/* height: 107px; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -15,6 +20,8 @@ header {
 	background-color: #f6f3ee;
 	position: fixed;
 	z-index: 2;
+	/* probando */
+	min-height: 15vh;
 }
 
 .btn_imagen,
@@ -32,7 +39,7 @@ header {
 .btn_cerrar__texto {
 	font-weight: bold;
 	font-size: 26px;
-	position: relative;
+	/* position: relative; */
 	left: 93%;
 	top: 8px;
 	color: #7d6d50;
@@ -69,24 +76,36 @@ header {
 main {
 	background-image: url(imagenes/img_fondo/flores.png);
 	background-size: 750px;
-	padding: 70px 20px;
-	position: relative;
-	top: 107px;
+	/* padding: 70px 20px; */
+	/* position: relative;
+	top: 107px; */
+	/* probando */
+	padding-top: 15vh;
+	padding-inline: 20px;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .contenedor_principal {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	/* probando */
+	width: 100%;
+	gap: 15px;
+	padding-top: 2%;
 }
 
 .meme {
 	/* con width no lo puedo hacer responsive */
-	/* width: 335px;*/
-	height: 335px;
+	width: 100%;
+	min-height: 335px;
 	position: sticky;
-	top: 107px;
+	top: 15vh;
 	z-index: 2;
-	margin-bottom: 36px;
+	/* margin-bottom: 36px; */
 	background-color: #f6f3eee8;
 }
 
@@ -111,7 +130,7 @@ main {
 	/* para que me ocuoe el contenedor del medio */
 	height: 70%;
 	/* para que se agrande y achique la foto */
-	position: relative;
+	/* position: relative; */
 	top: 15%;
 	border: 1px solid #9f8e6f;
 	/* background-color: #f6f3eed6; */
@@ -128,21 +147,36 @@ main {
 	margin: auto;
 }
 
-.contenedor_imagen,
-.contenedor_texto,
-input.archivo_pc,
-input.archivo_url,
-.ocultar {
-	display: none;
-}
-
 .contenedor_filtros,
 .contenedor_texto {
 	border: 1px solid #9f8e6f;
 	background-color: #d9d4ca70;
 	line-height: 36px;
 	padding-inline: 16px;
-	margin-top: 30px;
+	/* probando */
+	max-width: 600px;
+	margin: auto;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	display: flex;
+	/* margin-top: 30px; */
+	/* gap: 17px; */
+}
+.contenedor_imagen,
+.contenedor_texto,
+input.archivo_pc,
+input.archivo_url {
+	display: none;
+}
+
+.texto_fuente,
+.texto_panel,
+.texto_espaciado,
+.texto_interlineado,
+.imagen_archivo,
+.imagen_fondo {
+	width: 100%;
 }
 
 .stylo_label {

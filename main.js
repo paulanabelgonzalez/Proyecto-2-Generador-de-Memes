@@ -7,17 +7,39 @@ btnImagen.addEventListener("click", () => {
 	contenedorImagen.style.display = "block";
 	contenedorTexto.style.display = "none";
 	archivoUrl.style.display = "none";
+
+	if (window.visualViewport.width >= 970) {
+		contenedorPrincipal.style.width = "calc(100% - 335px )";
+		main.style.justifyContent = "flex-end";
+	} else {
+		contenedorPrincipal.style.width = "100%";
+		main.style.justifyContent = "center";
+	}
 });
 
 // evento para aparecer el contenedor de texto e intercambiarla con la de imagen
 
 const btnTexto = document.getElementById("btn_texto");
 const contenedorTexto = document.getElementById("contenedor_texto");
+const contenedorPrincipal = document.querySelector(".contenedor_principal");
+const main = document.querySelector("main");
+console.log(main);
+const body = document.querySelector("body");
+console.log(body);
 
 btnTexto.addEventListener("click", () => {
-	contenedorTexto.style.display = "block";
+	contenedorTexto.style.display = "flex";
 	contenedorImagen.style.display = "none";
+
+	if (window.visualViewport.width >= 970) {
+		contenedorPrincipal.style.width = "calc(100% - 335px )";
+		main.style.justifyContent = "flex-start";
+	} else {
+		contenedorPrincipal.style.width = "100%";
+		main.style.justifyContent = "center";
+	}
 });
+console.log(contenedorPrincipal);
 
 // evento para cerrar contenedores
 
@@ -26,12 +48,17 @@ const btnCerrarTexto = document.getElementById("btn_cerrar__texto");
 
 btnCerrarImagen.addEventListener("click", () => {
 	contenedorImagen.style.display = "none";
+	contenedorPrincipal.style.width = "100%";
+	main.style.justifyContent = "center";
 });
 
 // cerrar contenedor de texto
 
 btnCerrarTexto.addEventListener("click", () => {
 	contenedorTexto.style.display = "none";
+	contenedorPrincipal.style.width = "100%";
+	main.style.justifyContent = "center";
+	// contenedorPrincipal.style.alignItems = "center";
 });
 
 // modo claro y modo oscuro
