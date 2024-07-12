@@ -113,8 +113,12 @@ main {
 }
 
 .meme_img {
-	height: 100%;
-	min-height: 70%;
+	/* height: 100%; */
+	/* para que me ocuoe el contenedor del medio */
+	height: 70%;
+	/* para que se agrande y achique la foto */
+	position: relative;
+	top: 15%;
 	border: 1px solid #9f8e6f;
 	background-size: cover;
 }
