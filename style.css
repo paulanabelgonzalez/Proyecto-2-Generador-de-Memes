@@ -130,7 +130,7 @@ main {
 	/* para que me ocuoe el contenedor del medio */
 	height: 70%;
 	/* para que se agrande y achique la foto */
-	/* position: relative; */
+	position: relative;
 	top: 15%;
 	border: 1px solid #9f8e6f;
 	/* background-color: #f6f3eed6; */
@@ -166,7 +166,8 @@ main {
 .contenedor_imagen,
 .contenedor_texto,
 input.archivo_pc,
-input.archivo_url {
+input.archivo_url,
+.ocultar {
 	display: none;
 }
 
